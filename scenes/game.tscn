@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://yicge48108e0"]
 
+[ext_resource type="PackedScene" uid="uid://dbtxw1jpbbb5i" path="res://scenes/ui.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://8bdc0xc7bxau" path="res://scenes/tower.tscn" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://caugwk6shoruv" path="res://scenes/grid_square.tscn" id="2_yqjtg"]
+
 [node name="Game" type="Node2D" unique_id=1002643642]
+
+[node name="UI" parent="." unique_id=2122473639 instance=ExtResource("1_uwrxv")]
+
+[node name="Tower" parent="UI" unique_id=1406788403 instance=ExtResource("2_lnu2h")]
+position = Vector2(109, 93)
+
+[node name="GridSquare" parent="." unique_id=922420918 instance=ExtResource("2_yqjtg")]
+position = Vector2(320, 146)
+
+[node name="GridSquare2" parent="." unique_id=578068645 instance=ExtResource("2_yqjtg")]
+position = Vector2(434, 136)

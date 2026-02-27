@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bfmi06ll8e22a"]
+
+[sub_resource type="Curve2D" id="Curve2D_amcy5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 115, 17, 0, 0, 0, 0, 236, 128, 0, 0, 0, 0, 394, 55, 0, 0, 0, 0, 182, -34, 0, 0, 0, 0, 116, 15)
+}
+point_count = 5
+
+[node name="EnemyPath" type="Path2D" unique_id=519361759]
+curve = SubResource("Curve2D_amcy5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1628798140]
+position = Vector2(115, 17)
+rotation = 0.7423214
