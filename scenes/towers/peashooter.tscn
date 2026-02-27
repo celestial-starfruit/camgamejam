@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://csid4neeyuice"]
+
+[ext_resource type="PackedScene" uid="uid://8bdc0xc7bxau" path="res://scenes/towers/tower.tscn" id="1_8fadu"]
+[ext_resource type="Script" uid="uid://s0hughhqgl11" path="res://scenes/towers/peashooter.gd" id="2_f7iw0"]
+
+[node name="Tower" unique_id=514986937 instance=ExtResource("1_8fadu")]
+script = ExtResource("2_f7iw0")
