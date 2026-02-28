@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://g2ie0pm5b325"]
+
+[ext_resource type="FontFile" uid="uid://dc11s5a5nfp7x" path="res://assets/BetterVCR 25.09.ttf" id="1_5x3i2"]
+
+[resource]
+default_font = ExtResource("1_5x3i2")

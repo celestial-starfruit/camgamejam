@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://boxidtke4v7co" path="res://scenes/towers/tower.gd" id="1_ay4al"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ay4al"]
+size = Vector2(16, 21)
 
 [node name="Tower" type="Area2D" unique_id=514986937]
 script = ExtResource("1_ay4al")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=954598434]
-scale = Vector2(0.15625, 0.15625)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=717288644]
 shape = SubResource("RectangleShape2D_ay4al")
@@ -18,8 +18,4 @@ autostart = true
 
 [node name="ProjManager" type="Node2D" parent="." unique_id=2044163571]
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_area_exited"]
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]

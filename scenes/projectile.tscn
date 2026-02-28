@@ -6,6 +6,56 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_q3m7n"]
 radius = 8.0
 
+[sub_resource type="Animation" id="Animation_q3m7n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_softn"]
+resource_name = "expire"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6666666, 1),
+"transitions": PackedFloat32Array(0.7071069, 5.278033),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6q2a6"]
+_data = {
+&"RESET": SubResource("Animation_q3m7n"),
+&"expire": SubResource("Animation_softn")
+}
+
 [node name="Projectile" type="Area2D" unique_id=544712148]
 script = ExtResource("1_q3m7n")
 
@@ -14,3 +64,7 @@ texture = ExtResource("1_c8fcr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=98663329]
 shape = SubResource("CircleShape2D_q3m7n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=740400084]
+libraries/ = SubResource("AnimationLibrary_6q2a6")
+autoplay = &"expire"

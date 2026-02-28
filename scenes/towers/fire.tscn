@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c62qx21jbee7w"]
+
+[ext_resource type="PackedScene" uid="uid://8bdc0xc7bxau" path="res://scenes/towers/tower.tscn" id="1_m2lly"]
+[ext_resource type="Texture2D" uid="uid://ji4nhpwb8eus" path="res://assets/turrets/turrets.png" id="2_xmnqt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x7gc"]
+atlas = ExtResource("2_xmnqt")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymh5x"]
+atlas = ExtResource("2_xmnqt")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i32h2"]
+atlas = ExtResource("2_xmnqt")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5s0n0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x7gc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymh5x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i32h2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Fire" unique_id=514986937 instance=ExtResource("1_m2lly")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=954598434]
+sprite_frames = SubResource("SpriteFrames_5s0n0")

@@ -7,6 +7,16 @@
 
 [node name="Game" type="Node2D" unique_id=1002643642]
 
+[node name="TowersManager" type="Node2D" parent="." unique_id=408520640 groups=["TowersManager"]]
+
+[node name="BaseMarkers" type="Node2D" parent="." unique_id=1574944727]
+
+[node name="Start" type="Marker2D" parent="BaseMarkers" unique_id=1913691565]
+position = Vector2(175, 223)
+
+[node name="End" type="Marker2D" parent="BaseMarkers" unique_id=1570745408]
+position = Vector2(510, 223)
+
 [node name="UI" parent="." unique_id=2122473639 instance=ExtResource("1_uwrxv")]
 
 [node name="Tower" parent="UI" unique_id=514986937 instance=ExtResource("2_lnu2h")]
@@ -16,9 +26,18 @@ position = Vector2(183, 144)
 position = Vector2(233, 51)
 
 [node name="GridSquare" parent="." unique_id=922420918 instance=ExtResource("2_yqjtg")]
-position = Vector2(320, 146)
-
-[node name="GridSquare2" parent="." unique_id=578068645 instance=ExtResource("2_yqjtg")]
-position = Vector2(434, 136)
+position = Vector2(330, 115)
 
 [node name="EnemyPath" parent="." unique_id=519361759 instance=ExtResource("4_lbhrr")]
+
+[node name="GridSquare2" parent="." unique_id=730829125 instance=ExtResource("2_yqjtg")]
+position = Vector2(420, 156)
+
+[connection signal="area_entered" from="UI/Tower" to="UI/Tower" method="_on_area_entered"]
+[connection signal="area_exited" from="UI/Tower" to="UI/Tower" method="_on_area_exited"]
+[connection signal="mouse_entered" from="UI/Tower" to="UI/Tower" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Tower" to="UI/Tower" method="_on_mouse_exited"]
+[connection signal="area_entered" from="UI/Tower2" to="UI/Tower2" method="_on_area_entered"]
+[connection signal="area_exited" from="UI/Tower2" to="UI/Tower2" method="_on_area_exited"]
+[connection signal="mouse_entered" from="UI/Tower2" to="UI/Tower2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Tower2" to="UI/Tower2" method="_on_mouse_exited"]

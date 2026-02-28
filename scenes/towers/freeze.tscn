@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bnnner1yfnlow"]
+
+[ext_resource type="PackedScene" uid="uid://8bdc0xc7bxau" path="res://scenes/towers/tower.tscn" id="1_jid3l"]
+[ext_resource type="Texture2D" uid="uid://ji4nhpwb8eus" path="res://assets/turrets/turrets.png" id="2_7xw12"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8ns6"]
+atlas = ExtResource("2_7xw12")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8ann"]
+atlas = ExtResource("2_7xw12")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ut231"]
+atlas = ExtResource("2_7xw12")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_24nd6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8ns6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8ann")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ut231")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Freeze" unique_id=514986937 instance=ExtResource("1_jid3l")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=954598434]
+sprite_frames = SubResource("SpriteFrames_24nd6")
