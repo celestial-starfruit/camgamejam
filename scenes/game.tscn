@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bpc6vxc8mhwc2" path="res://assets/bases/south.png" id="6_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://dqwgqk63mmao" path="res://assets/bases/east.png" id="7_dinhu"]
 [ext_resource type="Texture2D" uid="uid://drwx5imqnl8d1" path="res://assets/bases/north.png" id="8_kvuet"]
+[ext_resource type="PackedScene" uid="uid://cbcpsapraub0e" path="res://scenes/preview_path.tscn" id="9_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tnpc"]
 texture = ExtResource("3_lbhrr")
@@ -210,23 +211,40 @@ position = Vector2(144, 59)
 
 [node name="EN" type="Node2D" parent="Paths" unique_id=869736085]
 
-[node name="Path2D" type="Path2D" parent="Paths/EN" unique_id=103102449]
+[node name="EnemyPath" type="Path2D" parent="Paths/EN" unique_id=103102449]
 curve = SubResource("Curve2D_0tnpc")
+
+[node name="PreviewPath" parent="Paths/EN/EnemyPath" unique_id=317916620 instance=ExtResource("9_vtaks")]
+position = Vector2(816, 244)
+rotation = -3.135911
+loop = false
 
 [node name="NW" type="Node2D" parent="Paths" unique_id=1860438876]
 
-[node name="Path2D" type="Path2D" parent="Paths/NW" unique_id=2103513356]
+[node name="EnemyPath" type="Path2D" parent="Paths/NW" unique_id=2103513356]
 curve = SubResource("Curve2D_vtaks")
+
+[node name="PreviewPath" parent="Paths/NW/EnemyPath" unique_id=1250363032 instance=ExtResource("9_vtaks")]
+position = Vector2(416, 17)
+rotation = 1.5859467
 
 [node name="WS" type="Node2D" parent="Paths" unique_id=2105386768]
 
-[node name="Path2D" type="Path2D" parent="Paths/WS" unique_id=312821063]
+[node name="EnemyPath" type="Path2D" parent="Paths/WS" unique_id=312821063]
 curve = SubResource("Curve2D_kvpfn")
+
+[node name="PreviewPath" parent="Paths/WS/EnemyPath" unique_id=599679257 instance=ExtResource("9_vtaks")]
+position = Vector2(64, 243)
+rotation = 0.015871683
 
 [node name="SE" type="Node2D" parent="Paths" unique_id=112837674]
 
-[node name="Path2D" type="Path2D" parent="Paths/SE" unique_id=2145963160]
+[node name="EnemyPath" type="Path2D" parent="Paths/SE" unique_id=2145963160]
 curve = SubResource("Curve2D_dinhu")
+
+[node name="PreviewPath" parent="Paths/SE/EnemyPath" unique_id=122498637 instance=ExtResource("9_vtaks")]
+position = Vector2(416, 470)
+rotation = -1.6183795
 
 [node name="Timers" type="Node" parent="." unique_id=1640630863]
 

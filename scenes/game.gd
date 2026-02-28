@@ -39,6 +39,8 @@ func _ready() -> void:
 		grid_square.global_position = to_global(placeables.map_to_local(cell_coords))
 	
 	Globals.current_game_state = Globals.GameStates.BUILD
+	for path in get_tree().get_nodes_in_group("PreviewPaths"):
+		path.show_preview()
 	Globals.tower_counts[Globals.Towers.PEASHOOTER] = 2
 	Globals.tower_counts[Globals.Towers.FIRE] = 1
 	Globals.tower_counts[Globals.Towers.FREEZE] = 2
@@ -56,18 +58,19 @@ func _process(delta: float) -> void:
 			player.visible = false
 			player_time_limit.stop()
 			#player.camera_2d.enabled = false
+			# kingshuk gooned here
 			if Globals.is_out_of_towers():
 				Globals.is_tower_selected = false
 				Globals.tower_selected = -1
-			
 		Globals.GameStates.DEFEND:
-			if all_enemies_deployed and paths.get_child(0).get_children().is_empty():
+			if all_enemies_deployed and get_tree().get_nodes_in_group("EnemyPaths").is_empty():
 				Globals.current_game_state = Globals.GameStates.ESCAPE
 				player.global_position = Globals.current_base.global_position
 				player.disabled = false
 				player.visible = true
 				player_time_limit.stop()
 				player_time_limit.start()
+				#player.camera_2d.enabled = true
 				#player.camera_2d.enabled = true
 			if Globals.lives == 0:
 				_on_player_time_limit_timeout()
@@ -88,7 +91,7 @@ func enemy_wave() -> void:
 		var enemy_path = ENEMY_PATH.instantiate()
 		enemy_spawn_timer.start()
 		await enemy_spawn_timer.timeout
-		paths.get_child(Globals.current_base.base_num).get_child(0).add_child(enemy_path)
+		paths.get_child(Globals.current_base.base_num).get_node("EnemyPath").add_child(enemy_path)
 	all_enemies_deployed = true
 	
 		
@@ -104,7 +107,11 @@ func _on_player_time_limit_timeout() -> void:
 	ui.show_restart_menu()
 	
 func on_player_reached_base() -> void:
-	# Update tower counts
+	Globals.tower_counts[Globals.Towers.PEASHOOTER] = 2
+	Globals.tower_counts[Globals.Towers.FIRE] = 1
+	Globals.tower_counts[Globals.Towers.FREEZE] = 2
 	Globals.current_base = Globals.bases_arr[(Globals.current_base.base_num + 1) % 4]
 	Globals.target_base = Globals.bases_arr[(Globals.target_base.base_num + 1) % 4]
 	Globals.current_game_state = Globals.GameStates.BUILD
+	for path in get_tree().get_nodes_in_group("PreviewPaths"):
+		path.show_preview()

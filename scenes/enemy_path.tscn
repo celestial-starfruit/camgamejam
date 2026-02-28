@@ -42,7 +42,7 @@ _data = {
 &"hurt": SubResource("Animation_4jm3e")
 }
 
-[node name="EnemyPath" type="PathFollow2D" unique_id=154211960]
+[node name="EnemyPath" type="PathFollow2D" unique_id=154211960 groups=["EnemyPaths"]]
 rotates = false
 loop = false
 script = ExtResource("1_ov72x")

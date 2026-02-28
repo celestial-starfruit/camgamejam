@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cbcpsapraub0e"]
+
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_mtfck"]
+[ext_resource type="Script" uid="uid://hx6gnxwqrppp" path="res://scenes/preview_path.gd" id="1_s7tih"]
+
+[node name="PreviewPath" type="PathFollow2D" unique_id=1250363032 groups=["PreviewPaths"]]
+loop = false
+script = ExtResource("1_s7tih")
+
+[node name="PreviewIcon" type="Sprite2D" parent="." unique_id=2043022084]
+scale = Vector2(0.156, 0.156)
+texture = ExtResource("1_mtfck")

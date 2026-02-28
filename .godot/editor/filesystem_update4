@@ -13,3 +13,6 @@ res://scenes/player.gd
 res://scenes/enemy_path.tscn
 res://scenes/enemy_path.gd
 res://scenes/towers/peashooter.tscn
+res://scenes/grid_square.tscn
+res://scenes/preview_path.tscn
+res://scenes/preview_path.gd
