@@ -1,13 +1,63 @@
-[gd_scene format=3 uid="uid://yicge48108e0"]
+[gd_scene format=4 uid="uid://yicge48108e0"]
 
+[ext_resource type="Script" uid="uid://wp4bxhujcbjw" path="res://scenes/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://dbtxw1jpbbb5i" path="res://scenes/ui.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://csid4neeyuice" path="res://scenes/towers/peashooter.tscn" id="2_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://caugwk6shoruv" path="res://scenes/grid_square.tscn" id="2_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://bfmi06ll8e22a" path="res://scenes/enemy_path.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cohiqpndtgam" path="res://scenes/enemy.tscn" id="3_iywne"]
+[ext_resource type="Texture2D" uid="uid://dr7c8er0bv526" path="res://assets/tilesets/tileset.png" id="5_iywne"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
+texture = ExtResource("5_iywne")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_u5sy4"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_lbhrr")
+
+[sub_resource type="Curve2D" id="Curve2D_lnu2h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 128, 177, 0, 0, 0, 0, 367, 178, 0, 0, 0, 0, 368, 352)
+}
+point_count = 3
 
 [node name="Game" type="Node2D" unique_id=1002643642]
+script = ExtResource("1_iywne")
+
+[node name="Tilesets" type="Node2D" parent="." unique_id=79551879]
+
+[node name="Paths" type="TileMapLayer" parent="Tilesets" unique_id=1745669476]
+tile_map_data = PackedByteArray("AAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAKAAUAAQAAAAAAAAALAAUAAQAAAAAAAAAMAAUAAQAAAAAAAAANAAUAAQAAAAAAAAAOAAUAAQAAAAAAAAAPAAUAAQAAAAAAAAAQAAUAAQAAAAAAAAARAAUAAQAAAAAAAAASAAUAAQAAAAAAAAATAAUAAQAAAAAAAAALAAYAAQAAAAAAAAALAAcAAQAAAAAAAAALAAgAAQAAAAAAAAALAAkAAQAAAAAAAAALAAoAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_u5sy4")
+
+[node name="Placeables" type="TileMapLayer" parent="Tilesets" unique_id=192840826]
+tile_map_data = PackedByteArray("AAAEAAQAAQABAAAAAAAFAAQAAQABAAAAAAAGAAQAAQABAAAAAAAHAAQAAQABAAAAAAAIAAQAAQABAAAAAAAJAAQAAQABAAAAAAAKAAQAAQABAAAAAAALAAQAAQABAAAAAAAMAAQAAQABAAAAAAANAAQAAQABAAAAAAAOAAQAAQABAAAAAAAPAAQAAQABAAAAAAAQAAQAAQABAAAAAAARAAQAAQABAAAAAAASAAQAAQABAAAAAAATAAQAAQABAAAAAAAKAAoAAQABAAAAAAAKAAkAAQABAAAAAAAKAAgAAQABAAAAAAAKAAcAAQABAAAAAAAKAAYAAQABAAAAAAAJAAYAAQABAAAAAAAIAAYAAQABAAAAAAAHAAYAAQABAAAAAAAGAAYAAQABAAAAAAAFAAYAAQABAAAAAAAEAAYAAQABAAAAAAAMAAYAAQABAAAAAAANAAYAAQABAAAAAAAOAAYAAQABAAAAAAAPAAYAAQABAAAAAAAQAAYAAQABAAAAAAARAAYAAQABAAAAAAASAAYAAQABAAAAAAATAAYAAQABAAAAAAAMAAcAAQABAAAAAAAMAAgAAQABAAAAAAAMAAoAAQABAAAAAAAMAAkAAQABAAAAAAA=")
+tile_set = SubResource("TileSet_u5sy4")
+
+[node name="Background" type="TileMapLayer" parent="Tilesets" unique_id=2038661044]
+tile_set = SubResource("TileSet_u5sy4")
+
+[node name="Grid" type="Node2D" parent="." unique_id=830970078]
 
 [node name="TowersManager" type="Node2D" parent="." unique_id=408520640 groups=["TowersManager"]]
+
+[node name="Paths" type="Node2D" parent="." unique_id=918830324]
+
+[node name="Path2D" type="Path2D" parent="Paths" unique_id=103102449]
+curve = SubResource("Curve2D_lnu2h")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D" unique_id=1342475800]
+position = Vector2(128, 177)
+rotation = 0.004184076
+rotates = false
+
+[node name="Enemy" parent="Paths/Path2D/PathFollow2D" unique_id=1905724422 instance=ExtResource("3_iywne")]
+
+[node name="Timers" type="Node" parent="." unique_id=1640630863]
+
+[node name="AttackCooldown" type="Timer" parent="Timers" unique_id=653627314 groups=["Timers"]]
+wait_time = 2.0
+autostart = true
 
 [node name="BaseMarkers" type="Node2D" parent="." unique_id=1574944727]
 
@@ -19,25 +69,4 @@ position = Vector2(510, 223)
 
 [node name="UI" parent="." unique_id=2122473639 instance=ExtResource("1_uwrxv")]
 
-[node name="Tower" parent="UI" unique_id=514986937 instance=ExtResource("2_lnu2h")]
-position = Vector2(183, 144)
-
-[node name="Tower2" parent="UI" unique_id=131848709 instance=ExtResource("2_lnu2h")]
-position = Vector2(233, 51)
-
-[node name="GridSquare" parent="." unique_id=922420918 instance=ExtResource("2_yqjtg")]
-position = Vector2(330, 115)
-
-[node name="EnemyPath" parent="." unique_id=519361759 instance=ExtResource("4_lbhrr")]
-
-[node name="GridSquare2" parent="." unique_id=730829125 instance=ExtResource("2_yqjtg")]
-position = Vector2(420, 156)
-
-[connection signal="area_entered" from="UI/Tower" to="UI/Tower" method="_on_area_entered"]
-[connection signal="area_exited" from="UI/Tower" to="UI/Tower" method="_on_area_exited"]
-[connection signal="mouse_entered" from="UI/Tower" to="UI/Tower" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="UI/Tower" to="UI/Tower" method="_on_mouse_exited"]
-[connection signal="area_entered" from="UI/Tower2" to="UI/Tower2" method="_on_area_entered"]
-[connection signal="area_exited" from="UI/Tower2" to="UI/Tower2" method="_on_area_exited"]
-[connection signal="mouse_entered" from="UI/Tower2" to="UI/Tower2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="UI/Tower2" to="UI/Tower2" method="_on_mouse_exited"]
+[connection signal="timeout" from="Timers/AttackCooldown" to="." method="_on_attack_cooldown_timeout"]

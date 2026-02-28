@@ -3,16 +3,22 @@
 [ext_resource type="Script" uid="uid://dke3hjjs8i3wv" path="res://scenes/grid_square.gd" id="1_mb54p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_25ab8"]
+size = Vector2(32, 32)
 
 [node name="GridSquare" type="Area2D" unique_id=922420918 groups=["Droppable"]]
 script = ExtResource("1_mb54p")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1685481415]
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
 mouse_filter = 1
+color = Color(1, 1, 1, 0.34117648)
+
+[node name="PreviewSprite" type="Sprite2D" parent="." unique_id=246596701]
+visible = false
+modulate = Color(1, 1, 1, 0.4745098)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2000224963]
 shape = SubResource("RectangleShape2D_25ab8")

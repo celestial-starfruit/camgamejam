@@ -13,9 +13,4 @@ script = ExtResource("1_ay4al")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=717288644]
 shape = SubResource("RectangleShape2D_ay4al")
 
-[node name="AttackCooldown" type="Timer" parent="." unique_id=647501875]
-autostart = true
-
 [node name="ProjManager" type="Node2D" parent="." unique_id=2044163571]
-
-[connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]
