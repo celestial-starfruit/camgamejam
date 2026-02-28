@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://wp4bxhujcbjw" path="res://scenes/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://dbtxw1jpbbb5i" path="res://scenes/ui.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://cohiqpndtgam" path="res://scenes/enemy.tscn" id="3_iywne"]
+[ext_resource type="PackedScene" uid="uid://cohiqpndtgam" path="res://scenes/enemy_path.tscn" id="3_iywne"]
 [ext_resource type="Texture2D" uid="uid://dr7c8er0bv526" path="res://assets/tilesets/tileset.png" id="5_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
@@ -43,21 +43,24 @@ tile_set = SubResource("TileSet_u5sy4")
 
 [node name="Paths" type="Node2D" parent="." unique_id=918830324]
 
-[node name="Path2D" type="Path2D" parent="Paths" unique_id=103102449]
+[node name="Path1" type="Path2D" parent="Paths" unique_id=103102449]
 curve = SubResource("Curve2D_lnu2h")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D" unique_id=1342475800]
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path1" unique_id=1342475800]
 position = Vector2(128, 177)
 rotation = 0.004184076
 rotates = false
 
-[node name="Enemy" parent="Paths/Path2D/PathFollow2D" unique_id=1905724422 instance=ExtResource("3_iywne")]
+[node name="Enemy" parent="Paths/Path1/PathFollow2D" unique_id=1905724422 instance=ExtResource("3_iywne")]
 
 [node name="Timers" type="Node" parent="." unique_id=1640630863]
 
 [node name="AttackCooldown" type="Timer" parent="Timers" unique_id=653627314 groups=["Timers"]]
 wait_time = 2.0
 autostart = true
+
+[node name="EnemySpawn" type="Timer" parent="Timers" unique_id=2077086468]
+wait_time = 0.5
 
 [node name="BaseMarkers" type="Node2D" parent="." unique_id=1574944727]
 

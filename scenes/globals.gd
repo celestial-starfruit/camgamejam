@@ -8,6 +8,7 @@ var tower_dict := {
 	Towers.FIRE: preload("uid://c62qx21jbee7w"),
 	Towers.FREEZE: preload("uid://bnnner1yfnlow")
 }
+var enemy_count: int
 
 var tower_sprites := {
 	Towers.PEASHOOTER: preload("uid://n5yja2xmhjr4"),

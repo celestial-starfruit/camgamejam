@@ -1,8 +1,9 @@
+Area2D
 PathFollow2D
+Timer
 Path2D
 Node2D
 Sprite2D
-Timer
 Node
 TileMapLayer
 HBoxContainer

@@ -1,2 +1,5 @@
-res://scenes/grid_square.tscn
 res://scenes/game.tscn
+res://scenes/game.gd
+res://scenes/globals.gd
+res://scenes/towers/tower.gd
+res://scenes/enemy.tscn
