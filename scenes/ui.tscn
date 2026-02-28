@@ -21,7 +21,7 @@ script = ExtResource("1_x4jx1")
 [node name="TowerMenu" type="ColorRect" parent="." unique_id=24206]
 anchors_preset = -1
 anchor_top = 0.097222224
-anchor_right = 0.16666667
+anchor_right = 0.2
 anchor_bottom = 1.0
 grow_vertical = 2
 size_flags_horizontal = 0
@@ -37,19 +37,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -59.000004
-offset_top = -193.25
-offset_right = 59.0
-offset_bottom = 198.75
+offset_left = -78.0
+offset_top = -196.0
+offset_right = 78.0
+offset_bottom = 196.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 30
 columns = 2
 
 [node name="Peashooter" type="Button" parent="TowerMenu/TowerContainer" unique_id=63836738]
-custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 theme = SubResource("Theme_wm3ai")
@@ -61,13 +59,15 @@ expand_icon = true
 
 [node name="PeashooterAvailable" type="Label" parent="TowerMenu/TowerContainer" unique_id=1163651265]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 theme_override_font_sizes/font_size = 24
 text = "1"
 horizontal_alignment = 1
 
 [node name="Fire" type="Button" parent="TowerMenu/TowerContainer" unique_id=1138151629]
-custom_minimum_size = Vector2(50, 70)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 theme = SubResource("Theme_8dubc")
@@ -79,13 +79,15 @@ expand_icon = true
 
 [node name="FireAvailable" type="Label" parent="TowerMenu/TowerContainer" unique_id=1565842469]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 theme_override_font_sizes/font_size = 24
 text = "2"
 horizontal_alignment = 1
 
 [node name="Freeze" type="Button" parent="TowerMenu/TowerContainer" unique_id=1185099785]
-custom_minimum_size = Vector2(50, 70)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 theme = SubResource("Theme_p7vwb")
@@ -97,6 +99,8 @@ expand_icon = true
 
 [node name="FreezeAvailable" type="Label" parent="TowerMenu/TowerContainer" unique_id=371767311]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 theme_override_font_sizes/font_size = 24
 text = "3"
 horizontal_alignment = 1
@@ -125,6 +129,7 @@ alignment = 1
 
 [node name="Lives" type="HBoxContainer" parent="TopBar/HBoxContainer" unique_id=1741300263]
 layout_mode = 2
+size_flags_horizontal = 3
 alignment = 1
 
 [node name="Label" type="Label" parent="TopBar/HBoxContainer/Lives" unique_id=599488641]
@@ -133,6 +138,7 @@ text = "Lives: 10"
 
 [node name="Wave" type="HBoxContainer" parent="TopBar/HBoxContainer" unique_id=1188835040]
 layout_mode = 2
+size_flags_horizontal = 3
 alignment = 1
 
 [node name="Label" type="Label" parent="TopBar/HBoxContainer/Wave" unique_id=1039734360]
@@ -141,6 +147,7 @@ text = "Wave: 1"
 
 [node name="EnemiesLeft" type="HBoxContainer" parent="TopBar/HBoxContainer" unique_id=14147652]
 layout_mode = 2
+size_flags_horizontal = 3
 alignment = 1
 
 [node name="Label" type="Label" parent="TopBar/HBoxContainer/EnemiesLeft" unique_id=428512292]
