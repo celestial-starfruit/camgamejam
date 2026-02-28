@@ -24,7 +24,7 @@ theme = ExtResource("2_wm3ai")
 color = Color(0.16102096, 0.0008604154, 0.0844514, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="TowerContainer" type="VBoxContainer" parent="TowerMenu" unique_id=2000092518]
+[node name="TowerContainer" type="GridContainer" parent="TowerMenu" unique_id=1241701629]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -33,13 +33,16 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -45.444447
 offset_top = -158.0
-offset_right = 45.444447
+offset_right = 45.444443
 offset_bottom = 158.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 23
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 27
+columns = 2
 
 [node name="Peashooter" type="Button" parent="TowerMenu/TowerContainer" unique_id=63836738]
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
@@ -49,7 +52,12 @@ icon = ExtResource("2_gdt2y")
 icon_alignment = 1
 expand_icon = true
 
+[node name="PeashooterAvailable" type="Label" parent="TowerMenu/TowerContainer" unique_id=1163651265]
+layout_mode = 2
+text = "1"
+
 [node name="Fire" type="Button" parent="TowerMenu/TowerContainer" unique_id=1138151629]
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
@@ -59,7 +67,12 @@ icon = ExtResource("3_wm3ai")
 icon_alignment = 1
 expand_icon = true
 
+[node name="FireAvailable" type="Label" parent="TowerMenu/TowerContainer" unique_id=1565842469]
+layout_mode = 2
+text = "2"
+
 [node name="Freeze" type="Button" parent="TowerMenu/TowerContainer" unique_id=1185099785]
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
@@ -69,10 +82,14 @@ icon = ExtResource("4_8dubc")
 icon_alignment = 1
 expand_icon = true
 
+[node name="FreezeAvailable" type="Label" parent="TowerMenu/TowerContainer" unique_id=371767311]
+layout_mode = 2
+text = "3"
+
 [node name="TopBar" type="ColorRect" parent="." unique_id=1919265641]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 39.0
+offset_bottom = 54.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -84,10 +101,11 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 9.0
+offset_left = 19.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 41
+alignment = 2
 
 [node name="Lives" type="HBoxContainer" parent="TopBar/HBoxContainer" unique_id=1741300263]
 layout_mode = 2
