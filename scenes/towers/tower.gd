@@ -4,6 +4,7 @@ class_name Tower
 var draggable := false
 var droppable := false
 var placed := false
+var active_shooting := false
 var area_ref: Area2D
 var offset: Vector2
 var initial_pos: Vector2
@@ -21,7 +22,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# Drag and drop logic
 	if draggable and !placed:
-		print("hi")
 		if Input.is_action_just_pressed("Click"):
 			offset = get_global_mouse_position() - global_position
 			Globals.dragging = true
@@ -34,6 +34,7 @@ func _process(delta: float) -> void:
 				tween.tween_property(self, "position", area_ref.position, 0.2).set_ease(Tween.EASE_OUT)
 				await tween.finished
 				placed = true
+				active_shooting = true
 				area_ref.filled = true
 			else:
 				tween.tween_property(self, "global_position", initial_pos, 0.2).set_ease(Tween.EASE_OUT)
@@ -69,5 +70,6 @@ func attack() -> void:
 	pass
 	
 	
-#func _on_attack_cooldown_timeout() -> void:
-	#attack()
+func _on_attack_cooldown_timeout() -> void:
+	if active_shooting:
+		attack()

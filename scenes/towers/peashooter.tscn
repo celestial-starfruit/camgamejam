@@ -2,6 +2,39 @@
 
 [ext_resource type="PackedScene" uid="uid://8bdc0xc7bxau" path="res://scenes/towers/tower.tscn" id="1_8fadu"]
 [ext_resource type="Script" uid="uid://s0hughhqgl11" path="res://scenes/towers/peashooter.gd" id="2_f7iw0"]
+[ext_resource type="Texture2D" uid="uid://ji4nhpwb8eus" path="res://assets/turrets.png" id="3_7nv8r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1i8o"]
+atlas = ExtResource("3_7nv8r")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fba6i"]
+atlas = ExtResource("3_7nv8r")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15bts"]
+atlas = ExtResource("3_7nv8r")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dkou7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1i8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fba6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15bts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Tower" unique_id=514986937 instance=ExtResource("1_8fadu")]
 script = ExtResource("2_f7iw0")
+
+[node name="Sprite2D" parent="." index="0" unique_id=954598434]
+sprite_frames = SubResource("SpriteFrames_dkou7")

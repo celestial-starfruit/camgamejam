@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dbtxw1jpbbb5i" path="res://scenes/ui.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://csid4neeyuice" path="res://scenes/towers/peashooter.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://caugwk6shoruv" path="res://scenes/grid_square.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bfmi06ll8e22a" path="res://scenes/enemy_path.tscn" id="4_lbhrr"]
 
 [node name="Game" type="Node2D" unique_id=1002643642]
 
@@ -19,3 +20,5 @@ position = Vector2(320, 146)
 
 [node name="GridSquare2" parent="." unique_id=578068645 instance=ExtResource("2_yqjtg")]
 position = Vector2(434, 136)
+
+[node name="EnemyPath" parent="." unique_id=519361759 instance=ExtResource("4_lbhrr")]

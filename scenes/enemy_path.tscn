@@ -2,18 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://cohiqpndtgam" path="res://scenes/enemy.tscn" id="1_fw00r"]
 
-[sub_resource type="Curve2D" id="Curve2D_amcy5"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 115, 17, 0, 0, 0, 0, 236, 128, 0, 0, 0, 0, 394, 55, 0, 0, 0, 0, 182, -34, 0, 0, 0, 0, 116, 15)
-}
-point_count = 5
+[sub_resource type="Curve2D" id="Curve2D_fw00r"]
 
 [node name="EnemyPath" type="Path2D" unique_id=519361759]
-curve = SubResource("Curve2D_amcy5")
+curve = SubResource("Curve2D_fw00r")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1628798140]
-position = Vector2(126.0779, 27.162376)
-rotation = 0.7423214
-progress = 15.040649
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=2060040846]
 
 [node name="Enemy" parent="PathFollow2D" unique_id=1905724422 instance=ExtResource("1_fw00r")]
