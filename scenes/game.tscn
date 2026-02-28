@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://wp4bxhujcbjw" path="res://scenes/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://dbtxw1jpbbb5i" path="res://scenes/ui.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://cohiqpndtgam" path="res://scenes/enemy_path.tscn" id="3_iywne"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player.tscn" id="4_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://dr7c8er0bv526" path="res://assets/tilesets/tileset.png" id="5_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
@@ -10,9 +10,12 @@ texture = ExtResource("5_iywne")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSet" id="TileSet_u5sy4"]
 tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 8
+physics_layer_0/collision_mask = 2
 sources/1 = SubResource("TileSetAtlasSource_lbhrr")
 
 [sub_resource type="Curve2D" id="Curve2D_lnu2h"]
@@ -23,6 +26,8 @@ point_count = 3
 
 [node name="Game" type="Node2D" unique_id=1002643642]
 script = ExtResource("1_iywne")
+
+[node name="UI" parent="." unique_id=2122473639 instance=ExtResource("1_uwrxv")]
 
 [node name="Tilesets" type="Node2D" parent="." unique_id=79551879]
 
@@ -46,21 +51,14 @@ tile_set = SubResource("TileSet_u5sy4")
 [node name="Path1" type="Path2D" parent="Paths" unique_id=103102449]
 curve = SubResource("Curve2D_lnu2h")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path1" unique_id=1342475800]
-position = Vector2(128, 177)
-rotation = 0.004184076
-rotates = false
-
-[node name="Enemy" parent="Paths/Path1/PathFollow2D" unique_id=1905724422 instance=ExtResource("3_iywne")]
-
 [node name="Timers" type="Node" parent="." unique_id=1640630863]
 
 [node name="AttackCooldown" type="Timer" parent="Timers" unique_id=653627314 groups=["Timers"]]
-wait_time = 2.0
 autostart = true
 
 [node name="EnemySpawn" type="Timer" parent="Timers" unique_id=2077086468]
 wait_time = 0.5
+one_shot = true
 
 [node name="BaseMarkers" type="Node2D" parent="." unique_id=1574944727]
 
@@ -70,6 +68,7 @@ position = Vector2(175, 223)
 [node name="End" type="Marker2D" parent="BaseMarkers" unique_id=1570745408]
 position = Vector2(510, 223)
 
-[node name="UI" parent="." unique_id=2122473639 instance=ExtResource("1_uwrxv")]
+[node name="Player" parent="." unique_id=1029405407 instance=ExtResource("4_lbhrr")]
+position = Vector2(214, 176)
 
 [connection signal="timeout" from="Timers/AttackCooldown" to="." method="_on_attack_cooldown_timeout"]

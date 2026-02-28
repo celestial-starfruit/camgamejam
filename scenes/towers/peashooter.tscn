@@ -42,5 +42,5 @@ sprite_frames = SubResource("SpriteFrames_dkou7")
 [node name="CollisionShape2D" parent="." index="1" unique_id=717288644]
 position = Vector2(0, -0.5)
 
-[node name="ProjManager" parent="." index="3" unique_id=2044163571]
+[node name="ProjManager" parent="." index="2" unique_id=2044163571]
 z_index = -1
