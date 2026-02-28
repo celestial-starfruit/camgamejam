@@ -1,4 +1,13 @@
-res://assets/theme.tres
 res://scenes/game.tscn
+res://assets/theme.tres
+res://scenes/towers/fire.tscn
+res://scenes/towers/fire.gd
+res://scenes/enemy_path.gd
+res://scenes/enemy_path.tscn
+res://scenes/towers/freeze.tscn
+res://snow.gd
+res://scenes/towers/freeze.gd
 res://scenes/game.gd
-res://scenes/start_countdown.tscn
+res://scenes/globals.gd
+res://scenes/preview_path.gd
+res://scenes/ui.gd

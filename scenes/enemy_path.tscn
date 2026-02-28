@@ -64,3 +64,4 @@ shape = SubResource("RectangleShape2D_md0e3")
 libraries/ = SubResource("AnimationLibrary_cnmur")
 
 [connection signal="area_entered" from="Enemy" to="." method="_on_enemy_area_entered"]
+[connection signal="area_exited" from="Enemy" to="." method="_on_enemy_area_exited"]

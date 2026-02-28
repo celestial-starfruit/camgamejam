@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c62qx21jbee7w"]
 
 [ext_resource type="PackedScene" uid="uid://8bdc0xc7bxau" path="res://scenes/towers/tower.tscn" id="1_m2lly"]
-[ext_resource type="Script" path="res://scenes/towers/fire.gd" id="2_8x7gc"]
+[ext_resource type="Script" uid="uid://bbfdisklnje1v" path="res://scenes/towers/fire.gd" id="2_8x7gc"]
 [ext_resource type="Texture2D" uid="uid://ji4nhpwb8eus" path="res://assets/turrets/turrets.png" id="2_xmnqt"]
 [ext_resource type="Texture2D" uid="uid://dmewghfxsiedk" path="res://assets/turrets/fire_particles.png" id="4_8x7gc"]
 
@@ -40,6 +40,9 @@ particles_anim_h_frames = 5
 particles_anim_v_frames = 1
 particles_anim_loop = true
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8x7gc"]
+radius = 48.0
+
 [node name="Fire" unique_id=514986937 instance=ExtResource("1_m2lly")]
 script = ExtResource("2_8x7gc")
 
@@ -61,3 +64,7 @@ initial_velocity_min = 48.0
 initial_velocity_max = 48.0
 anim_speed_min = 1.0
 anim_speed_max = 1.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="4" unique_id=763217942]
+shape = SubResource("CircleShape2D_8x7gc")
+disabled = true
