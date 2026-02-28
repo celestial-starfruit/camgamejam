@@ -52,50 +52,6 @@ physics_layer_0/collision_layer = 8
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_iywne")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_trtic"]
-atlas = ExtResource("5_vtaks")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ir15t"]
-atlas = ExtResource("5_vtaks")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ca42v"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_trtic")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ir15t")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rysoc"]
-atlas = ExtResource("6_kvpfn")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ssvqc"]
-atlas = ExtResource("6_kvpfn")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_264po"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rysoc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ssvqc")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_1kice"]
 atlas = ExtResource("7_dinhu")
 region = Rect2(0, 0, 32, 32)
@@ -140,6 +96,50 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_trtic"]
+atlas = ExtResource("5_vtaks")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir15t"]
+atlas = ExtResource("5_vtaks")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ca42v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trtic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir15t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rysoc"]
+atlas = ExtResource("6_kvpfn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssvqc"]
+atlas = ExtResource("6_kvpfn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_264po"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rysoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssvqc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="Curve2D" id="Curve2D_lnu2h"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 128, 177, 0, 0, 0, 0, 367, 178, 0, 0, 0, 0, 368, 352)
@@ -168,14 +168,6 @@ tile_set = SubResource("TileSet_u5sy4")
 
 [node name="Bases" type="Node2D" parent="." unique_id=1574944727]
 
-[node name="West" parent="Bases" unique_id=1284496920 instance=ExtResource("4_0tnpc")]
-position = Vector2(202, 271)
-sprite_frames = SubResource("SpriteFrames_ca42v")
-
-[node name="South" parent="Bases" unique_id=654327645 instance=ExtResource("4_0tnpc")]
-position = Vector2(558, 524)
-sprite_frames = SubResource("SpriteFrames_264po")
-
 [node name="East" parent="Bases" unique_id=249120269 instance=ExtResource("4_0tnpc")]
 position = Vector2(932, 281)
 sprite_frames = SubResource("SpriteFrames_37s47")
@@ -184,9 +176,18 @@ sprite_frames = SubResource("SpriteFrames_37s47")
 position = Vector2(557, 69)
 sprite_frames = SubResource("SpriteFrames_pl11u")
 
+[node name="West" parent="Bases" unique_id=1284496920 instance=ExtResource("4_0tnpc")]
+position = Vector2(202, 271)
+sprite_frames = SubResource("SpriteFrames_ca42v")
+
+[node name="South" parent="Bases" unique_id=654327645 instance=ExtResource("4_0tnpc")]
+position = Vector2(558, 524)
+sprite_frames = SubResource("SpriteFrames_264po")
+
 [node name="TowersManager" type="Node2D" parent="." unique_id=408520640 groups=["TowersManager"]]
 
 [node name="Paths" type="Node2D" parent="." unique_id=918830324]
+position = Vector2(144, 59)
 
 [node name="Path1" type="Path2D" parent="Paths" unique_id=103102449]
 curve = SubResource("Curve2D_lnu2h")
@@ -198,6 +199,10 @@ autostart = true
 
 [node name="EnemySpawn" type="Timer" parent="Timers" unique_id=2077086468]
 wait_time = 0.5
+one_shot = true
+
+[node name="PlayerTimeLimit" type="Timer" parent="Timers" unique_id=1738106291]
+wait_time = 20.0
 one_shot = true
 
 [node name="Player" parent="." unique_id=1029405407 instance=ExtResource("4_lbhrr")]

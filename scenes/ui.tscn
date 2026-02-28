@@ -154,12 +154,37 @@ alignment = 1
 layout_mode = 2
 text = "Enemies Left: 4"
 
-[node name="Button" type="Button" parent="." unique_id=2099943549]
-offset_left = 922.0
-offset_top = 511.0
-offset_right = 930.0
-offset_bottom = 519.0
+[node name="TimeLeft" type="HBoxContainer" parent="TopBar/HBoxContainer" unique_id=684301254]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="TopBar/HBoxContainer/TimeLeft" unique_id=50817077]
+layout_mode = 2
+text = "Time left: 20"
+
+[node name="PlayButton" type="Button" parent="." unique_id=2099943549]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -118.0
+offset_top = -78.0
+offset_right = -34.0
+offset_bottom = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+focus_mode = 0
+theme = ExtResource("2_wm3ai")
+disabled = true
+text = "Play"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="toggled" from="TowerMenu/TowerContainer/Peashooter" to="." method="_on_tower_toggled" binds= [0]]
 [connection signal="toggled" from="TowerMenu/TowerContainer/Fire" to="." method="_on_tower_toggled" binds= [1]]
 [connection signal="toggled" from="TowerMenu/TowerContainer/Freeze" to="." method="_on_tower_toggled" binds= [2]]
+[connection signal="pressed" from="PlayButton" to="." method="_on_button_pressed"]

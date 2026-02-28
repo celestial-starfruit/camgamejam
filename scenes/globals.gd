@@ -3,6 +3,9 @@ extends Node
 var is_tower_selected := false
 var tower_selected := 0
 enum Towers {PEASHOOTER, FIRE, FREEZE}
+enum Bases {EAST, NORTH, WEST, SOUTH}
+var current_base := Bases.EAST
+var player_time_left: float = 0
 var tower_dict := {
 	Towers.PEASHOOTER: preload("uid://csid4neeyuice"),
 	Towers.FIRE: preload("uid://c62qx21jbee7w"),
@@ -36,3 +39,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func is_out_of_towers():
+	var count = 0
+	for i in tower_counts:
+		if tower_counts[i] != 0:
+			count += 1
+	return count == 0

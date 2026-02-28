@@ -7,3 +7,6 @@ res://scenes/game.gd
 res://scenes/globals.gd
 res://scenes/ui.gd
 res://scenes/grid_square.gd
+res://scenes/towers/tower.gd
+res://scenes/player.tscn
+res://scenes/player.gd

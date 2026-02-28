@@ -1,3 +1,5 @@
+Timer
+Camera2D
 Button
 AnimatedSprite2D
 Area2D
@@ -10,6 +12,3 @@ HBoxContainer
 CharacterBody2D
 AnimationPlayer
 PathFollow2D
-Timer
-Path2D
-Node

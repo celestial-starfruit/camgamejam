@@ -19,7 +19,6 @@ func _process(delta: float) -> void:
 			var tower: Tower = Globals.tower_dict[Globals.tower_selected].instantiate()
 			tower.global_position = global_position
 			Globals.tower_counts[Globals.tower_selected] -= 1
-			tower.active_shooting = true
 			get_tree().get_first_node_in_group("TowersManager").add_child(tower)
 			
 	else:
