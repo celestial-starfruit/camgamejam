@@ -2,5 +2,45 @@
 
 [ext_resource type="FontFile" uid="uid://dc11s5a5nfp7x" path="res://assets/BetterVCR 25.09.ttf" id="1_5x3i2"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5x3i2"]
+bg_color = Color(0.16078432, 0, 0.08627451, 1)
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wl1kw"]
+bg_color = Color(0.16078432, 0, 0.08627451, 1)
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2pqw"]
+bg_color = Color(0.16078432, 0, 0.08627451, 1)
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lu33j"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.16078432, 0, 0.08627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wycmq"]
+bg_color = Color(0.16078432, 0, 0.08627451, 1)
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
 [resource]
 default_font = ExtResource("1_5x3i2")
+Button/styles/focus = SubResource("StyleBoxFlat_5x3i2")
+Button/styles/hover = SubResource("StyleBoxFlat_wl1kw")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_x2pqw")
+Button/styles/normal = SubResource("StyleBoxFlat_lu33j")
+Button/styles/pressed = SubResource("StyleBoxFlat_wycmq")
