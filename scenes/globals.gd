@@ -17,7 +17,11 @@ var tower_counts := {
 	Towers.FIRE: 0,
 	Towers.FREEZE: 0
 }
-
+var tower_names := {
+	"Peashooter": 0,
+	"Fire": 1,
+	"Freeze": 2
+}
 var tower_sprites := {
 	Towers.PEASHOOTER: preload("uid://n5yja2xmhjr4"),
 	Towers.FIRE: preload("uid://c3w8eru64r5gr"),

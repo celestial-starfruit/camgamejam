@@ -11,13 +11,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Globals.is_tower_selected and !filled:
+	if Globals.is_tower_selected and !filled and Globals.tower_counts[Globals.tower_selected] > 0:
 		visible = true
 		if Input.is_action_pressed("Click") and mouse_inside:
 			visible = false
 			filled = true
 			var tower: Tower = Globals.tower_dict[Globals.tower_selected].instantiate()
 			tower.global_position = global_position
+			Globals.tower_counts[Globals.tower_selected] -= 1
 			tower.active_shooting = true
 			get_tree().get_first_node_in_group("TowersManager").add_child(tower)
 			

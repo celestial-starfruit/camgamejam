@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://yicge48108e0"]
+[gd_scene format=4 uid="uid://yicge48108e0"]
 
 [ext_resource type="Script" uid="uid://wp4bxhujcbjw" path="res://scenes/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://dbtxw1jpbbb5i" path="res://scenes/ui.tscn" id="1_uwrxv"]
@@ -154,9 +154,11 @@ script = ExtResource("1_iywne")
 [node name="Tilesets" type="Node2D" parent="." unique_id=79551879]
 
 [node name="Paths" type="TileMapLayer" parent="Tilesets" unique_id=1745669476]
+tile_map_data = PackedByteArray("AAAIAAgAAAAAAAEAAAAJAAgAAAAAAAEAAAAKAAgAAAAAAAEAAAALAAgAAAAAAAEAAAAMAAgAAAAAAAEAAAANAAgAAAAAAAEAAAAOAAgAAAAAAAEAAAAPAAgAAAAAAAEAAAAQAAgAAAAAAAEAAAARAAgAAAAAAAEAAAASAAgAAAAAAAEAAAATAAgAAAAAAAEAAAATAAkAAAAAAAEAAAAUAAkAAAAAAAEAAAAVAAkAAAAAAAEAAAAWAAkAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_u5sy4")
 
 [node name="Placeables" type="TileMapLayer" parent="Tilesets" unique_id=2040099809]
+tile_map_data = PackedByteArray("AAAIAAcAAAACAAIAAAAJAAcAAAACAAIAAAAKAAcAAAACAAIAAAALAAcAAAACAAIAAAAMAAcAAAACAAIAAAANAAcAAAACAAIAAAAOAAcAAAACAAIAAAAPAAcAAAACAAIAAAAQAAcAAAACAAIAAAARAAcAAAACAAIAAAASAAcAAAACAAIAAAATAAcAAAACAAIAAAAUAAcAAAACAAIAAAAVAAgAAAACAAIAAAAWAAgAAAACAAIAAAAXAAgAAAACAAIAAAAYAAgAAAACAAIAAAAZAAgAAAACAAIAAAAaAAgAAAACAAIAAAAaAAcAAAACAAIAAAAbAAcAAAACAAIAAAAUAAgAAAACAAEAAAA=")
 tile_set = SubResource("TileSet_u5sy4")
 
 [node name="Background" type="TileMapLayer" parent="Tilesets" unique_id=511402873]
@@ -175,7 +177,7 @@ position = Vector2(558, 524)
 sprite_frames = SubResource("SpriteFrames_264po")
 
 [node name="East" parent="Bases" unique_id=249120269 instance=ExtResource("4_0tnpc")]
-position = Vector2(953, 293)
+position = Vector2(932, 281)
 sprite_frames = SubResource("SpriteFrames_37s47")
 
 [node name="North" parent="Bases" unique_id=1718776250 instance=ExtResource("4_0tnpc")]

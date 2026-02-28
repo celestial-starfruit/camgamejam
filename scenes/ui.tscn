@@ -154,6 +154,12 @@ alignment = 1
 layout_mode = 2
 text = "Enemies Left: 4"
 
+[node name="Button" type="Button" parent="." unique_id=2099943549]
+offset_left = 922.0
+offset_top = 511.0
+offset_right = 930.0
+offset_bottom = 519.0
+
 [connection signal="toggled" from="TowerMenu/TowerContainer/Peashooter" to="." method="_on_tower_toggled" binds= [0]]
 [connection signal="toggled" from="TowerMenu/TowerContainer/Fire" to="." method="_on_tower_toggled" binds= [1]]
 [connection signal="toggled" from="TowerMenu/TowerContainer/Freeze" to="." method="_on_tower_toggled" binds= [2]]
