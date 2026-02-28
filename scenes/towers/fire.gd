@@ -1,7 +1,8 @@
 extends Tower
-
-# const PROJECTILE = preload("uid://c7tdsm07l0w3v")
-# @onready var proj_manager: Node2D = $ProjManager
+class_name Fire
 
 func attack() -> void:
-	get_node("CPUParticles2D").emitting = true
+	$CPUParticles2D.emitting = true
+	$CollisionShape2D2.disabled = false
+	await get_tree().create_timer(1.0).timeout
+	$CollisionShape2D2.disabled = true
