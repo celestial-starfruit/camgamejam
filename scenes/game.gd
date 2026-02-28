@@ -39,8 +39,7 @@ func _ready() -> void:
 		grid_square.global_position = to_global(placeables.map_to_local(cell_coords))
 	
 	Globals.current_game_state = Globals.GameStates.BUILD
-	for path in get_tree().get_nodes_in_group("PreviewPaths"):
-		path.show_preview()
+	paths.get_child(Globals.current_base.base_num).get_node("EnemyPath/PreviewPath").show_preview()
 	Globals.tower_counts[Globals.Towers.PEASHOOTER] = 2
 	Globals.tower_counts[Globals.Towers.FIRE] = 1
 	Globals.tower_counts[Globals.Towers.FREEZE] = 2
@@ -110,8 +109,9 @@ func on_player_reached_base() -> void:
 	Globals.tower_counts[Globals.Towers.PEASHOOTER] = 2
 	Globals.tower_counts[Globals.Towers.FIRE] = 1
 	Globals.tower_counts[Globals.Towers.FREEZE] = 2
+	
+	paths.get_child(Globals.current_base.base_num).get_node("EnemyPath/PreviewPath").hide_preview()
 	Globals.current_base = Globals.bases_arr[(Globals.current_base.base_num + 1) % 4]
 	Globals.target_base = Globals.bases_arr[(Globals.target_base.base_num + 1) % 4]
 	Globals.current_game_state = Globals.GameStates.BUILD
-	for path in get_tree().get_nodes_in_group("PreviewPaths"):
-		path.show_preview()
+	paths.get_child(Globals.current_base.base_num).get_node("EnemyPath/PreviewPath").show_preview()

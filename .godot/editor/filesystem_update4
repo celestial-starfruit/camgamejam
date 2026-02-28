@@ -16,3 +16,5 @@ res://scenes/towers/peashooter.tscn
 res://scenes/grid_square.tscn
 res://scenes/preview_path.tscn
 res://scenes/preview_path.gd
+res://scenes/towers/fire.tscn
+res://scenes/towers/freeze.tscn

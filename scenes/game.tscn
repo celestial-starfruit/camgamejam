@@ -217,7 +217,6 @@ curve = SubResource("Curve2D_0tnpc")
 [node name="PreviewPath" parent="Paths/EN/EnemyPath" unique_id=317916620 instance=ExtResource("9_vtaks")]
 position = Vector2(816, 244)
 rotation = -3.135911
-loop = false
 
 [node name="NW" type="Node2D" parent="Paths" unique_id=1860438876]
 
