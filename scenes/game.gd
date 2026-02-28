@@ -18,6 +18,7 @@ func _ready() -> void:
 		grid.add_child(grid_square)
 		grid_square.global_position = to_global(placeables.map_to_local(cell_coords))
 	
+	Globals.current_game_state = Globals.GameStates.BUILD
 	await get_tree().create_timer(2).timeout
 	Globals.enemy_count = 5
 	enemy_wave()
@@ -25,7 +26,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Globals.current_game_state == Globals.GameStates.BUILD:
+		Globals.tower_counts[Globals.Towers.PEASHOOTER] = 2
+		Globals.tower_counts[Globals.Towers.FIRE] = 1
+		Globals.tower_counts[Globals.Towers.FREEZE] = 2
+		
 
 func _on_attack_cooldown_timeout() -> void:
 	for tower: Tower in towers_manager.get_children():

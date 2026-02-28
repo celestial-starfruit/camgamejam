@@ -70,8 +70,12 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="TopBar" type="ColorRect" parent="." unique_id=1919265641]
-offset_right = 640.0
-offset_bottom = 35.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 39.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme = ExtResource("2_wm3ai")
 color = Color(0.16078432, 0, 0.08627451, 1)
 
