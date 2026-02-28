@@ -11,6 +11,8 @@ func _process(delta: float) -> void:
 	progress_ratio += delta * speed
 	if progress_ratio == 1:
 		progress_ratio = 0
+	if Globals.current_game_state != Globals.GameStates.BUILD:
+		hide_preview()
 
 func show_preview():
 	visible = true

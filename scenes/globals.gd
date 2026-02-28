@@ -16,7 +16,7 @@ var tower_dict := {
 var enemy_count: int
 enum GameStates {BUILD, DEFEND, ESCAPE}
 var current_game_state: int = GameStates.BUILD
-var round: int
+var round: int = 1
 var tower_counts := {
 	Towers.PEASHOOTER: 0,
 	Towers.FIRE: 0,
@@ -30,7 +30,7 @@ var tower_names := {
 }
 var tower_sprites := {
 	Towers.PEASHOOTER: preload("uid://n5yja2xmhjr4"),
-	Towers.FIRE: preload("uid://c3w8eru64r5gr"),
+	Towers.FIRE: preload("uid://cp4jbe565fhxr"),
 	Towers.FREEZE: preload("uid://bopwdcrywv7c8")
 }
 

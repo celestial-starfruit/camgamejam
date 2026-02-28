@@ -14,6 +14,9 @@ func _process(delta: float) -> void:
 	progress_ratio += delta * speed
 	if hitpoints <= 0:
 		queue_free()
+	if progress_ratio == 1:
+		Globals.lives -= 1
+		queue_free()
 
 
 func _on_enemy_area_entered(area: Area2D) -> void:
@@ -21,7 +24,4 @@ func _on_enemy_area_entered(area: Area2D) -> void:
 		hitpoints -= 1
 		animation_player.play("hurt")
 		area.queue_free()
-	elif area.is_in_group("Bases"):
-		print("enemy hits base")
-		Globals.lives -= 1
-		queue_free()
+		

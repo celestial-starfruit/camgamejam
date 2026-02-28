@@ -10,6 +10,7 @@ extends Node2D
 @onready var player: Player = $Player
 @onready var bases: Node2D = $Bases
 @onready var player_time_limit: Timer = $Timers/PlayerTimeLimit
+@onready var start_countdown: CanvasLayer = $StartCountdown
 
 var all_enemies_deployed = false
 
@@ -22,6 +23,7 @@ func _ready() -> void:
 	
 	player.visible = false
 	player.disabled = true
+	start_countdown.visible = false
 	
 	Globals.current_base = bases.get_node("East")
 	Globals.target_base = bases.get_node("North")
@@ -51,26 +53,24 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
 	match Globals.current_game_state:
 		Globals.GameStates.BUILD:
 			player.visible = false
 			player_time_limit.stop()
 			#player.camera_2d.enabled = false
-			# kingshuk gooned here
 			if Globals.is_out_of_towers():
 				Globals.is_tower_selected = false
 				Globals.tower_selected = -1
 		Globals.GameStates.DEFEND:
 			if all_enemies_deployed and get_tree().get_nodes_in_group("EnemyPaths").is_empty():
 				Globals.current_game_state = Globals.GameStates.ESCAPE
+				start_countdown.get_node("AnimationPlayer").play("countdown")
+				await start_countdown.get_node("AnimationPlayer").animation_finished
 				player.global_position = Globals.current_base.global_position
 				player.disabled = false
 				player.visible = true
 				player_time_limit.stop()
 				player_time_limit.start()
-				#player.camera_2d.enabled = true
-				#player.camera_2d.enabled = true
 			if Globals.lives == 0:
 				_on_player_time_limit_timeout()
 		Globals.GameStates.ESCAPE:
@@ -113,5 +113,6 @@ func on_player_reached_base() -> void:
 	paths.get_child(Globals.current_base.base_num).get_node("EnemyPath/PreviewPath").hide_preview()
 	Globals.current_base = Globals.bases_arr[(Globals.current_base.base_num + 1) % 4]
 	Globals.target_base = Globals.bases_arr[(Globals.target_base.base_num + 1) % 4]
+	Globals.round += 1
 	Globals.current_game_state = Globals.GameStates.BUILD
 	paths.get_child(Globals.current_base.base_num).get_node("EnemyPath/PreviewPath").show_preview()

@@ -27,21 +27,22 @@ func _process(delta: float) -> void:
 	freeze_available.text = str(Globals.tower_counts[Globals.Towers.FREEZE])
 	
 	play_button.disabled = !(Globals.is_out_of_towers() and Globals.current_game_state == Globals.GameStates.BUILD)
+	wave.get_child(0).text = "Wave: " + str(Globals.round)
 	if Globals.current_game_state == Globals.GameStates.ESCAPE:
 		lives.visible = false
 		enemies_left.visible = false
 		time_left.visible = true
 		play_button.visible = false
-		tower_menu.visible = false
+		#tower_menu.visible = false
 		time_left.get_child(0).text = "Time left: %.2f" % Globals.player_time_left
 	else:
 		lives.visible = true
 		lives.get_child(0).text = "Lives: " + str(Globals.lives)
+		enemies_left.get_child(0).text = "Enemies approaching: " + str(Globals.enemy_count)
 		enemies_left.visible = true
 		time_left.visible = false
 		play_button.visible = true
-		tower_menu.visible = true
-		
+		#tower_menu.visible = true
 	
 
 func _on_play_button_pressed() -> void:

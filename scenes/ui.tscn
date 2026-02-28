@@ -225,6 +225,8 @@ layout_mode = 2
 focus_mode = 0
 text = "Restart"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=26530748]
+
 [connection signal="toggled" from="TowerMenu/TowerContainer/Peashooter" to="." method="_on_tower_toggled" binds= [0]]
 [connection signal="toggled" from="TowerMenu/TowerContainer/Fire" to="." method="_on_tower_toggled" binds= [1]]
 [connection signal="toggled" from="TowerMenu/TowerContainer/Freeze" to="." method="_on_tower_toggled" binds= [2]]
