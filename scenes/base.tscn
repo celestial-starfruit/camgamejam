@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b76xuqlismrr5"]
+
+[ext_resource type="Script" uid="uid://kgkt20ftpmpt" path="res://scenes/base.gd" id="1_baglu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvqg0"]
+size = Vector2(23, 30)
+
+[node name="Base" type="AnimatedSprite2D" unique_id=1284496920]
+script = ExtResource("1_baglu")
+
+[node name="Area" type="Area2D" parent="." unique_id=2106695469]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area" unique_id=733899946]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_pvqg0")
