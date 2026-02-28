@@ -21,3 +21,7 @@ func _on_enemy_area_entered(area: Area2D) -> void:
 		hitpoints -= 1
 		animation_player.play("hurt")
 		area.queue_free()
+	elif area.is_in_group("Bases"):
+		print("enemy hits base")
+		Globals.lives -= 1
+		queue_free()

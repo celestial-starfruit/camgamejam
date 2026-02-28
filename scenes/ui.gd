@@ -8,12 +8,14 @@ extends CanvasLayer
 @onready var enemies_left: HBoxContainer = $TopBar/HBoxContainer/EnemiesLeft
 @onready var time_left: HBoxContainer = $TopBar/HBoxContainer/TimeLeft
 @onready var tower_menu: ColorRect = $TowerMenu
+@onready var failure_screen: ColorRect = $FailureScreen
 
 signal play_pressed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	play_button.disabled = true
+	failure_screen.visible = false
 
 func _on_tower_toggled(toggled_on: bool, tower_id: int) -> void:
 	Globals.is_tower_selected = toggled_on
@@ -31,9 +33,10 @@ func _process(delta: float) -> void:
 		time_left.visible = true
 		play_button.visible = false
 		tower_menu.visible = false
-		time_left.get_child(0).text = "Time left: " + str(Globals.player_time_left)
+		time_left.get_child(0).text = "Time left: %.2f" % Globals.player_time_left
 	else:
 		lives.visible = true
+		lives.get_child(0).text = "Lives: " + str(Globals.lives)
 		enemies_left.visible = true
 		time_left.visible = false
 		play_button.visible = true
@@ -41,5 +44,15 @@ func _process(delta: float) -> void:
 		
 	
 
-func _on_button_pressed() -> void:
+func _on_play_button_pressed() -> void:
 	emit_signal("play_pressed")
+
+
+func _on_button_pressed() -> void:
+	Globals.reset_variables()
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
+
+func show_restart_menu():
+	failure_screen.visible = true
+	get_tree().paused = true

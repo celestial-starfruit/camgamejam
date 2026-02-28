@@ -2,7 +2,6 @@ extends CharacterBody2D
 class_name Player
 
 @export var speed = 300.0
-@onready var camera_2d: Camera2D = $Camera2D
 var disabled = true
 
 func _physics_process(delta: float) -> void:

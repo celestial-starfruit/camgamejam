@@ -1,10 +1,12 @@
 extends Node
 
 var is_tower_selected := false
-var tower_selected := 0
+var tower_selected: int
 enum Towers {PEASHOOTER, FIRE, FREEZE}
 enum Bases {EAST, NORTH, WEST, SOUTH}
-var current_base := Bases.EAST
+var current_base: Node2D
+var target_base: Node2D
+var lives := 13
 var player_time_left: float = 0
 var tower_dict := {
 	Towers.PEASHOOTER: preload("uid://csid4neeyuice"),
@@ -20,6 +22,7 @@ var tower_counts := {
 	Towers.FIRE: 0,
 	Towers.FREEZE: 0
 }
+var bases_arr: Array
 var tower_names := {
 	"Peashooter": 0,
 	"Fire": 1,
@@ -30,6 +33,15 @@ var tower_sprites := {
 	Towers.FIRE: preload("uid://c3w8eru64r5gr"),
 	Towers.FREEZE: preload("uid://bopwdcrywv7c8")
 }
+
+func reset_variables():
+	current_base = null
+	target_base = null
+	lives = 13
+	player_time_left = 0
+	current_game_state = GameStates.BUILD
+	round = 1
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
