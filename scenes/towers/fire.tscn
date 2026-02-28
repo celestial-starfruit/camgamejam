@@ -37,7 +37,7 @@ animations = [{
 particles_animation = true
 particles_anim_h_frames = 5
 particles_anim_v_frames = 1
-particles_anim_loop = false
+particles_anim_loop = true
 
 [sub_resource type="Image" id="Image_xmnqt"]
 data = {
@@ -68,7 +68,7 @@ explosiveness = 0.8
 particle_flag_align_y = true
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 32.0
-initial_velocity_max = 32.0
+initial_velocity_min = 48.0
+initial_velocity_max = 48.0
 anim_speed_min = 1.0
 anim_speed_max = 1.0
