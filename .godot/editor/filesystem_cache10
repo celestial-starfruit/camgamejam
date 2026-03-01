@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1772327309
+::res://::1772327990
 default_bus_layout.tres::AudioBusLayout::7278229142065781457::1772324727::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::1790880795757653::1772218838::1772218844::1::::<><><>0<>0<>1d558fff71561543e2cf7e0d300c3350<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 snow.gd::GDScript::-1::1772322322::0::1::::Snow<>Tower<><>0<>0<><>::
@@ -14,7 +14,7 @@ east.png::CompressedTexture2D::244943920851392702::1772239305::1772239360::1::::
 north.png::CompressedTexture2D::8399339207635208236::1772239357::1772239360::1::::<><><>0<>0<>14e89242e08355a944ae19f292ef654d<>res://.godot/imported/north.png-82f1e352408782a480d06b653cd1dcbb.ctex::
 south.png::CompressedTexture2D::3445303034861837391::1772239340::1772239360::1::::<><><>0<>0<>59269e37cf0406eda31df3b27284481a<>res://.godot/imported/south.png-ff3b0275e7096f01285bf1175d99892f.ctex::
 west.png::CompressedTexture2D::6558857685030312016::1772239325::1772239360::1::::<><><>0<>0<>483dc631d406a348a76b7d1297e350df<>res://.godot/imported/west.png-db289275a0ebf515bc2a492fde663a58.ctex::
-::res://assets/music/::1772324338
+::res://assets/music/::1772327818
 building.wav::AudioStreamWAV::7914580372388346724::1772324336::1772327818::1::::<><><>0<>0<>bfa2a144c7f163b4753f363accc6a11b<>res://.godot/imported/building.wav-610f142a405eb8363c640c4623664fe1.sample::
 tdphase.wav::AudioStreamWAV::2527960883168505783::1772324336::1772327814::1::::<><><>0<>0<>5ea21cdbfaee7a7526e2feff12e125d7<>res://.godot/imported/tdphase.wav-165ae425f7528605f1cd1713694a2d9d.sample::
 title.wav::AudioStreamWAV::7215916904725013950::1772324336::1772324338::1::::<><><>0<>0<>b6482c40a21e6cf4d47abdc828f05660<>res://.godot/imported/title.wav-01bfab1a13469a53d2678f216bb06949.sample::
@@ -36,19 +36,19 @@ freeze.png::CompressedTexture2D::3401371424588115373::1772240859::1772240862::1:
 peashooter.png::CompressedTexture2D::975859622658809627::1772240812::1772240862::1::::<><><>0<>0<>e933271cf19656cde33aced0dfa5231f<>res://.godot/imported/peashooter.png-011b2e1117facdbfe37c17fdf34e0c88.ctex::
 snow.png::CompressedTexture2D::8712636357787418255::1772316266::1772316276::1::::<><><>0<>0<>dcfaa4b77c3e60aaf698ee3678db832b<>res://.godot/imported/snow.png-e881149c8556a0b273fe57e4b01f898b.ctex::
 turrets.png::CompressedTexture2D::649999014723496034::1772237976::1772240868::1::::<><><>0<>0<>8ccce116716164a1e52da1f349085a05<>res://.godot/imported/turrets.png-dc847a4ab724698fa05ab9b68e003af0.ctex::
-::res://scenes/::1772327555
+::res://scenes/::1772327975
 base.gd::GDScript::714917259920275913::1772305090::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
 base.tscn::PackedScene::4697892454952197220::1772305090::0::1::::<><><>0<>0<><>::uid://kgkt20ftpmpt::::res://scenes/base.gd
 enemy_path.gd::GDScript::2948371868017766869::1772323008::0::1::::<>PathFollow2D<><>0<>0<><>::
-enemy_path.tscn::PackedScene::169719145274597836::1772322648::0::1::::<><><>0<>0<><>::uid://4q335xxs2p::::res://icon.svg<>uid://biahivroxx8mr::::res://scenes/enemy_path.gd
+enemy_path.tscn::PackedScene::169719145274597836::1772327864::0::1::::<><><>0<>0<><>::uid://4q335xxs2p::::res://icon.svg<>uid://biahivroxx8mr::::res://scenes/enemy_path.gd
 game (copy 1).tscn::PackedScene::8157482637507926495::1772308273::0::1::::<><><>0<>0<><>::uid://wp4bxhujcbjw::::res://scenes/game.gd<>uid://dbtxw1jpbbb5i::::res://scenes/ui.tscn<>uid://b6my6p23cr3bw::::res://assets/tilesets/day_path.png<>uid://b76xuqlismrr5::::res://scenes/base.tscn<>uid://be8qbmt0fe144::::res://scenes/player.tscn<>uid://c0pfossxya4lg::::res://assets/bases/west.png<>uid://bpc6vxc8mhwc2::::res://assets/bases/south.png<>uid://dqwgqk63mmao::::res://assets/bases/east.png<>uid://drwx5imqnl8d1::::res://assets/bases/north.png
 game.gd::GDScript::1576884024703241260::1772327488::0::1::::<>Node2D<><>0<>0<><>::
 game.tscn::PackedScene::1701179674522081005::1772327555::0::1::::<><><>0<>0<><>::uid://wp4bxhujcbjw::::res://scenes/game.gd<>uid://dbtxw1jpbbb5i::::res://scenes/ui.tscn<>uid://dx7uojckpkx4d::::res://scenes/start_countdown.tscn<>uid://b6my6p23cr3bw::::res://assets/tilesets/day_path.png<>uid://b76xuqlismrr5::::res://scenes/base.tscn<>uid://be8qbmt0fe144::::res://scenes/player.tscn<>uid://c0pfossxya4lg::::res://assets/bases/west.png<>uid://bpc6vxc8mhwc2::::res://assets/bases/south.png<>uid://dqwgqk63mmao::::res://assets/bases/east.png<>uid://drwx5imqnl8d1::::res://assets/bases/north.png<>uid://cbcpsapraub0e::::res://scenes/preview_path.tscn
 globals.gd::GDScript::1905758828474928837::1772327231::0::1::::<>Node<><>0<>0<><>::
 grid_square.gd::GDScript::7871121062306336705::1772299047::0::1::::<>Area2D<><>0<>0<><>::
 grid_square.tscn::PackedScene::4814533085840105057::1772309690::0::1::::<><><>0<>0<><>::uid://dke3hjjs8i3wv::::res://scenes/grid_square.gd
-music.gd::GDScript::3826394206688573987::1772327813::0::1::::<>Node2D<><>0<>0<><>::
-Music.tscn::PackedScene::4714172998480523404::1772327813::0::1::::<><><>0<>0<><>::uid://bursfhq1ldyfr::::res://scenes/music.gd
+music.gd::GDScript::3826394206688573987::1772327914::0::1::::<>Node2D<><>0<>0<><>::
+Music.tscn::PackedScene::4714172998480523404::1772327975::0::1::::<><><>0<>0<><>::uid://bursfhq1ldyfr::::res://scenes/music.gd
 player.gd::GDScript::1550541657805822174::1772327227::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
 player.tscn::PackedScene::2736274442581612719::1772327356::0::1::::<><><>0<>0<><>::uid://x8mpvwus2ucg::::res://assets/player.png<>uid://wddgu6jaiy0m::::res://scenes/player.gd
 preview_path.gd::GDScript::540696254704491473::1772318988::0::1::::<>PathFollow2D<><>0<>0<><>::
@@ -58,7 +58,7 @@ projectile.tscn::PackedScene::7058322506768916061::1772325302::0::1::::<><><>0<>
 start_countdown.tscn::PackedScene::8840905360128538681::1772320294::0::1::::<><><>0<>0<><>::uid://g2ie0pm5b325::::res://assets/theme.tres
 ui.gd::GDScript::780041914220140925::1772327356::0::1::::<>CanvasLayer<><>0<>0<><>::
 ui.tscn::PackedScene::7270111230537260352::1772327231::0::1::::<><><>0<>0<><>::uid://ld4f84youwg0::::res://scenes/ui.gd<>uid://n5yja2xmhjr4::::res://assets/turrets/peashooter.png<>uid://g2ie0pm5b325::::res://assets/theme.tres<>uid://cp4jbe565fhxr::::res://assets/turrets/fire.png<>uid://bopwdcrywv7c8::::res://assets/turrets/freeze.png
-::res://scenes/towers/::1772327725
+::res://scenes/towers/::1772327813
 fire.gd::GDScript::2467128814816838929::1772327813::0::1::::Fire<>Tower<><>0<>0<><>::
 fire.tscn::PackedScene::7005447723374682806::1772327725::0::1::::<><><>0<>0<><>::uid://8bdc0xc7bxau::::res://scenes/towers/tower.tscn<>uid://bbfdisklnje1v::::res://scenes/towers/fire.gd<>uid://ji4nhpwb8eus::::res://assets/turrets/turrets.png<>uid://dmewghfxsiedk::::res://assets/turrets/fire_particles.png
 freeze.gd::GDScript::-1::1772322322::0::1::::Freeze<>Tower<><>0<>0<><>::
