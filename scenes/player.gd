@@ -5,15 +5,17 @@ class_name Player
 @export var hitpoints = 3
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 var disabled = true
+var slows: int = 0
 
 func _ready() -> void:
 	Globals.player = self
+	slows = 0
 
 func _physics_process(delta: float) -> void:
 	if !disabled:
 		var direction := Input.get_vector("Left", "Right", "Up", "Down")
 		if direction:
-			velocity = direction * speed
+			velocity = direction * speed * (0.5 ** float(slows))
 		else:
 			velocity = Vector2.ZERO
 

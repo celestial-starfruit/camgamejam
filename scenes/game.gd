@@ -125,5 +125,7 @@ func on_player_reached_base() -> void:
 	Globals.target_base = Globals.bases_arr[(Globals.target_base.base_num + 1) % 4]
 	Globals.round += 1
 	Globals.current_game_state = Globals.GameStates.BUILD
+	player.slows = 0
+	player.hitpoints = 3
 	Music.play_music(BUILDING_MUSIC)
 	paths.get_child(Globals.current_base.base_num).get_node("EnemyPath/PreviewPath").show_preview()
