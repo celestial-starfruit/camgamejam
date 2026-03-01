@@ -13,9 +13,12 @@ func _process(delta: float) -> void:
 func _on_area_body_entered(body: Node2D) -> void:
 	if body is Player and self == Globals.target_base:
 		print("player reached target")
+		Globals.game.counting_down = true
+		Globals.player_time_limit.stop()
 		Music.stop_music()
 		asp.play()
 		Globals.player.visible = false
 		await asp.finished
 		Music.play_music(BUILDING)
+		Globals.game.counting_down = false
 		player_reached.emit()

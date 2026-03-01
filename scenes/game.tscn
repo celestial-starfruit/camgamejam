@@ -218,12 +218,15 @@ tile_set = SubResource("TileSet_vtaks")
 
 [node name="PeashooterStream" type="AudioStreamPlayer" parent="AudioStreams" unique_id=466652459]
 stream = ExtResource("5_trtic")
+bus = &"SFX"
 
 [node name="FreezeStream" type="AudioStreamPlayer" parent="AudioStreams" unique_id=1569961710]
 stream = ExtResource("6_ir15t")
+bus = &"SFX"
 
 [node name="FireStream" type="AudioStreamPlayer" parent="AudioStreams" unique_id=124984696]
 stream = ExtResource("7_ca42v")
+bus = &"SFX"
 
 [node name="Boundaries" type="Node2D" parent="." unique_id=619400930]
 
