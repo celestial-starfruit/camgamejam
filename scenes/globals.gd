@@ -41,6 +41,7 @@ func reset_variables():
 	target_base = null
 	lives = 13
 	player_time_left = 0
+	enemy_count = 5
 	current_game_state = GameStates.BUILD
 	round = 1
 	bases_arr = []

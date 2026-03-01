@@ -18,11 +18,17 @@ func _physics_process(delta: float) -> void:
 		var direction := Input.get_vector("Left", "Right", "Up", "Down")
 		if direction:
 			velocity = direction * speed * (0.5 ** float(slows))
-			sprite_2d.play("default")
-			sprite_2d.flip_h = direction.x >= 0
+			if direction.y:
+				sprite_2d.flip_v = direction.y >= 0
+				sprite_2d.play("up")
+			elif direction.x:
+				sprite_2d.play("run")
+				sprite_2d.flip_v = false
+				sprite_2d.flip_h = direction.x >= 0
 		else:
 			velocity = Vector2.ZERO
-			sprite_2d.stop()
+			sprite_2d.play("idle")
+			sprite_2d.flip_v = false
 
 		move_and_slide()
 
