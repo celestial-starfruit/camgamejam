@@ -1,3 +1,7 @@
+CollisionShape2D
+StaticBody2D
+Node2D
+AudioStreamPlayer
 ColorRect
 Label
 CanvasLayer
@@ -6,9 +10,6 @@ Camera2D
 PathFollow2D
 Sprite2D
 Path2D
-Node2D
 Button
 VBoxContainer
 Timer
-AnimatedSprite2D
-Area2D

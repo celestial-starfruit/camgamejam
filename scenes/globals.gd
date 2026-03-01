@@ -15,7 +15,14 @@ var tower_dict := {
 }
 var enemy_count: int
 enum GameStates {BUILD, DEFEND, ESCAPE}
-var current_game_state: int = GameStates.BUILD
+var current_game_state: int = GameStates.BUILD:
+	set(value):
+		if value == GameStates.BUILD:
+			AudioPlayer.stream = AudioPlayer.BUILDING
+		else:
+			AudioPlayer.stream = AudioPlayer.TDPHASE
+		AudioPlayer.play()
+		current_game_state = value
 var round: int = 1
 var tower_counts := {
 	Towers.PEASHOOTER: 0,

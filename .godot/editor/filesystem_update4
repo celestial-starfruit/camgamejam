@@ -10,3 +10,6 @@ res://scenes/towers/fire.tscn
 res://scenes/towers/freeze.tscn
 res://scenes/towers/tower.gd
 res://scenes/projectile.tscn
+res://default_bus_layout.tres
+res://scenes/game.tscn
+res://scenes/audio_player.gd

@@ -55,6 +55,8 @@ physics_layer_0/collision_layer = 8
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_0tnpc")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kvpfn"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_1kice"]
 atlas = ExtResource("7_dinhu")
 region = Rect2(0, 0, 32, 32)
@@ -189,6 +191,35 @@ tile_map_data = PackedByteArray("AAAKAA0AAAACAAAAAAALAA0AAAACAAAAAAAMAA0AAAACAAA
 tile_set = SubResource("TileSet_vtaks")
 
 [node name="Grid" type="Node2D" parent="." unique_id=830970078]
+
+[node name="Boundaries" type="Node2D" parent="." unique_id=619400930]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boundaries" unique_id=114439913]
+position = Vector2(560, 55)
+rotation = 3.1415927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D" unique_id=1262078211]
+shape = SubResource("WorldBoundaryShape2D_kvpfn")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Boundaries" unique_id=1404279328]
+position = Vector2(562, 545)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D2" unique_id=857558850]
+shape = SubResource("WorldBoundaryShape2D_kvpfn")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Boundaries" unique_id=947419023]
+position = Vector2(960, 301)
+rotation = -1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D3" unique_id=1555414354]
+shape = SubResource("WorldBoundaryShape2D_kvpfn")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Boundaries" unique_id=222027061]
+position = Vector2(193, 238)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D4" unique_id=464594447]
+shape = SubResource("WorldBoundaryShape2D_kvpfn")
 
 [node name="Bases" type="Node2D" parent="." unique_id=1574944727]
 
