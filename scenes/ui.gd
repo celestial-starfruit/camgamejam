@@ -85,3 +85,8 @@ func update_styleboxes(label_txt: String):
 				label.remove_theme_stylebox_override("normal")
 				
 				
+
+
+func _on_quit_pressed() -> void:
+	Globals.reset_variables()
+	get_tree().change_scene_to_file("res://scenes/start_menu.tscn")

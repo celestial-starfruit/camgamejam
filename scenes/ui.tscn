@@ -227,16 +227,9 @@ text = "Play"
 metadata/_edit_use_anchors_ = true
 
 [node name="FailureScreen" type="ColorRect" parent="." unique_id=128905750]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -330.0
-offset_top = -206.0
-offset_right = 330.0
-offset_bottom = 206.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_wm3ai")
@@ -248,13 +241,13 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -85.0
-offset_top = 73.0
-offset_right = 85.0
-offset_bottom = -73.0
+offset_left = -249.0
+offset_top = 171.0
+offset_right = 249.0
+offset_bottom = -133.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 116
+theme_override_constants/separation = 32
 
 [node name="Label" type="Label" parent="FailureScreen/VBoxContainer" unique_id=1840254820]
 layout_mode = 2
@@ -265,6 +258,11 @@ text = "You lost!"
 layout_mode = 2
 focus_mode = 0
 text = "Restart"
+
+[node name="Quit" type="Button" parent="FailureScreen/VBoxContainer" unique_id=2065714207]
+layout_mode = 2
+focus_mode = 0
+text = "Quit to Menu"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=26530748]
 
@@ -283,3 +281,4 @@ horizontal_alignment = 1
 [connection signal="toggled" from="TowerMenu/TowerContainer/Freeze" to="." method="_on_tower_toggled" binds= [2]]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="FailureScreen/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="FailureScreen/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
