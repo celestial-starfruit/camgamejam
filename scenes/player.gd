@@ -22,10 +22,10 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 func hurt() -> void:
-	print(hitpoints)
-	if hitpoints != 1:
-		hitpoints -= 1
-	else:
-		Globals.game_over()
-	animation_player.play("hurt")
+	if !animation_player.is_playing():
+		animation_player.play("hurt")
+		if hitpoints != 1:
+			hitpoints -= 1
+		else:
+			Globals.game_over()
 	
