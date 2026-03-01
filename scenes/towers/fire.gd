@@ -1,7 +1,7 @@
 extends Tower
 class_name Fire
 
-var alternate = false
+var alternate = true
 
 func attack() -> void:
 	if alternate:

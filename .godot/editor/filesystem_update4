@@ -4,3 +4,7 @@ res://scenes/ui.gd
 res://scenes/game.tscn
 res://scenes/game.gd
 res://scenes/towers/fire.gd
+res://scenes/towers/fire.tscn
+res://scenes/Music.tscn
+res://scenes/music.gd
+res://scenes/enemy_path.tscn

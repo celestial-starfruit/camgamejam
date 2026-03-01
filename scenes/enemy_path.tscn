@@ -47,7 +47,6 @@ rotates = false
 loop = false
 script = ExtResource("1_ov72x")
 speed = 0.1
-hitpoints = 1
 
 [node name="Enemy" type="Area2D" parent="." unique_id=1684069800]
 collision_layer = 4
