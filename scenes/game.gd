@@ -134,6 +134,8 @@ func on_player_reached_base() -> void:
 	Globals.target_base = Globals.bases_arr[(Globals.target_base.base_num + 1) % 4]
 	Globals.round += 1
 	Globals.current_game_state = Globals.GameStates.BUILD
+	for enemy in get_tree().get_nodes_in_group("EnemyPaths"):
+		enemy.speed += 0.02
 	Globals.enemy_count += 3
 	player.slows = 0
 	player.camera_2d.enabled = false

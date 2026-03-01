@@ -45,6 +45,8 @@ func reset_variables():
 	current_game_state = GameStates.BUILD
 	round = 1
 	bases_arr = []
+	for enemy in get_tree().get_nodes_in_group("EnemyPaths"):
+		enemy.speed = 0.2
 	
 
 
