@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 func hurt(damage: int = 1) -> void:
-	if !animation_player.is_playing() and !Globals.game.counting_down:
+	if !animation_player.is_playing() and !Globals.game.counting_down and Globals.current_game_state == Globals.GameStates.ESCAPE:
 		animation_player.play("hurt")
 		if hitpoints > damage:
 			hitpoints -= damage
