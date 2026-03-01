@@ -15,5 +15,7 @@ func _on_area_body_entered(body: Node2D) -> void:
 		print("player reached target")
 		Music.stop_music()
 		asp.play()
+		Globals.player.visible = false
+		await asp.finished
 		Music.play_music(BUILDING)
 		player_reached.emit()
