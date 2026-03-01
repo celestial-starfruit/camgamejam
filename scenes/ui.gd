@@ -9,6 +9,7 @@ extends CanvasLayer
 @onready var time_left: HBoxContainer = $TopBar/HBoxContainer/TimeLeft
 @onready var tower_menu: ColorRect = $TowerMenu
 @onready var failure_screen: ColorRect = $FailureScreen
+@onready var hp: HBoxContainer = $TopBar/HBoxContainer/HP
 
 signal play_pressed
 
@@ -29,6 +30,8 @@ func _process(delta: float) -> void:
 	play_button.disabled = !(Globals.is_out_of_towers() and Globals.current_game_state == Globals.GameStates.BUILD)
 	wave.get_child(0).text = "Wave: " + str(Globals.round)
 	if Globals.current_game_state == Globals.GameStates.ESCAPE:
+		hp.visible = true
+		hp.get_child(0).text = "HP: " + str(Globals.player.hitpoints)
 		lives.visible = false
 		enemies_left.visible = false
 		time_left.visible = true
@@ -36,6 +39,7 @@ func _process(delta: float) -> void:
 		#tower_menu.visible = false
 		time_left.get_child(0).text = "Time left: %.2f" % Globals.player_time_left
 	else:
+		hp.visible = false
 		lives.visible = true
 		lives.get_child(0).text = "Lives: " + str(Globals.lives)
 		enemies_left.get_child(0).text = "Enemies approaching: " + str(Globals.enemy_count)

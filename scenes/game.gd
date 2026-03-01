@@ -13,6 +13,7 @@ extends Node2D
 @onready var start_countdown: CanvasLayer = $StartCountdown
 
 var all_enemies_deployed = false
+var counting_down = false
 
 const ENEMY_PATH = preload("uid://cohiqpndtgam")
 const GRID_SQUARE = preload("uid://caugwk6shoruv")
@@ -71,8 +72,10 @@ func _process(delta: float) -> void:
 			if all_enemies_deployed and get_tree().get_nodes_in_group("EnemyPaths").is_empty():
 				Globals.current_game_state = Globals.GameStates.ESCAPE
 				Music.play_music(TDPHASE)
+				counting_down = true
 				start_countdown.get_node("AnimationPlayer").play("countdown")
 				await start_countdown.get_node("AnimationPlayer").animation_finished
+				counting_down = false
 				player.global_position = Globals.current_base.global_position
 				player.disabled = false
 				player.visible = true
@@ -87,7 +90,7 @@ func _process(delta: float) -> void:
 
 func _on_attack_cooldown_timeout() -> void:
 	for tower: Tower in towers_manager.get_children():
-		if tower.active_shooting:
+		if tower.active_shooting and not counting_down:
 			tower.attack()
 
 

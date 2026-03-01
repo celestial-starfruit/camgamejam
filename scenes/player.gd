@@ -6,6 +6,9 @@ class_name Player
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 var disabled = true
 
+func _ready() -> void:
+	Globals.player = self
+
 func _physics_process(delta: float) -> void:
 	if !disabled:
 		var direction := Input.get_vector("Left", "Right", "Up", "Down")

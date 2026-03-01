@@ -128,6 +128,16 @@ grow_vertical = 2
 theme_override_constants/separation = 50
 alignment = 1
 
+[node name="HP" type="HBoxContainer" parent="TopBar/HBoxContainer" unique_id=136554251]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="TopBar/HBoxContainer/HP" unique_id=2058747674]
+layout_mode = 2
+text = "HP: 3"
+
 [node name="Lives" type="HBoxContainer" parent="TopBar/HBoxContainer" unique_id=1741300263]
 layout_mode = 2
 size_flags_horizontal = 3

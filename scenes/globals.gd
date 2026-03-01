@@ -34,6 +34,7 @@ var tower_sprites := {
 	Towers.FREEZE: preload("uid://bopwdcrywv7c8")
 }
 var game: Node2D
+var player: Player
 
 func reset_variables():
 	current_base = null
