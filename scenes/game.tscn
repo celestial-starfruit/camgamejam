@@ -344,7 +344,7 @@ one_shot = true
 
 [node name="Player" parent="." unique_id=1029405407 instance=ExtResource("4_lbhrr")]
 visible = false
-position = Vector2(214, 176)
+position = Vector2(1, -12)
 
 [connection signal="timeout" from="Timers/AttackCooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="timeout" from="Timers/PlayerTimeLimit" to="." method="_on_player_time_limit_timeout"]

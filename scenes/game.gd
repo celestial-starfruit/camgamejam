@@ -83,6 +83,7 @@ func _process(delta: float) -> void:
 				counting_down = false
 				player.global_position = Globals.current_base.global_position
 				player.disabled = false
+				player.camera_2d.enabled = true
 				player.visible = true
 				player_time_limit.stop()
 				player_time_limit.start()
@@ -135,6 +136,7 @@ func on_player_reached_base() -> void:
 	Globals.round += 1
 	Globals.current_game_state = Globals.GameStates.BUILD
 	player.slows = 0
+	player.camera_2d.enabled = false
 	player.hitpoints = 3
 	Music.play_music(BUILDING_MUSIC)
 	paths.get_child(Globals.current_base.base_num).get_node("EnemyPath/PreviewPath").show_preview()

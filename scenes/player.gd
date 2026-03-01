@@ -4,6 +4,7 @@ class_name Player
 @export var speed = 300.0
 @export var hitpoints = 3
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var camera_2d: Camera2D = $Camera2D
 var disabled = true
 var slows: int = 0
 
