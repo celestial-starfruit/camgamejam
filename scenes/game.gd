@@ -54,7 +54,7 @@ func _ready() -> void:
 	Globals.current_game_state = Globals.GameStates.BUILD
 	Music.play_music(BUILDING_MUSIC)
 	paths.get_child(Globals.current_base.base_num).get_node("EnemyPath/PreviewPath").show_preview()
-	Globals.tower_counts[Globals.Towers.PEASHOOTER] = 2
+	Globals.tower_counts[Globals.Towers.PEASHOOTER] = 1
 	Globals.tower_counts[Globals.Towers.FIRE] = 1
 	Globals.tower_counts[Globals.Towers.FREEZE] = 2
 		
@@ -126,7 +126,7 @@ func _on_player_time_limit_timeout() -> void:
 	Globals.game_over()
 	
 func on_player_reached_base() -> void:
-	Globals.tower_counts[Globals.Towers.PEASHOOTER] = 2
+	Globals.tower_counts[Globals.Towers.PEASHOOTER] = 1
 	Globals.tower_counts[Globals.Towers.FIRE] = 1
 	Globals.tower_counts[Globals.Towers.FREEZE] = 2
 	

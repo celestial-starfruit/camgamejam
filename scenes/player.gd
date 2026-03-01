@@ -5,6 +5,7 @@ class_name Player
 @export var hitpoints = 3
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 var disabled = true
 var slows: int = 0
 
@@ -17,8 +18,12 @@ func _physics_process(delta: float) -> void:
 		var direction := Input.get_vector("Left", "Right", "Up", "Down")
 		if direction:
 			velocity = direction * speed * (0.5 ** float(slows))
+			sprite_2d.play("default")
+			if direction.x >= 0:
+				sprite_2d.flip_h = true
 		else:
 			velocity = Vector2.ZERO
+			sprite_2d.stop()
 
 		move_and_slide()
 

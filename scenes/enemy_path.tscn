@@ -1,9 +1,60 @@
 [gd_scene format=3 uid="uid://cohiqpndtgam"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_fw00r"]
 [ext_resource type="Script" uid="uid://biahivroxx8mr" path="res://scenes/enemy_path.gd" id="1_ov72x"]
+[ext_resource type="Texture2D" uid="uid://e5fbyy0kitem" path="res://assets/cat.png" id="2_ov72x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jm3e"]
+atlas = ExtResource("2_ov72x")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnmur"]
+atlas = ExtResource("2_ov72x")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tch4"]
+atlas = ExtResource("2_ov72x")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kaxol"]
+atlas = ExtResource("2_ov72x")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuw2b"]
+atlas = ExtResource("2_ov72x")
+region = Rect2(128, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_725tx"]
+atlas = ExtResource("2_ov72x")
+region = Rect2(160, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j82ee"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jm3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnmur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tch4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kaxol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuw2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_725tx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
+size = Vector2(25, 14)
 
 [sub_resource type="Animation" id="Animation_ov72x"]
 length = 0.001
@@ -52,11 +103,13 @@ speed = 0.1
 collision_layer = 4
 collision_mask = 17
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=1815174614]
-scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("1_fw00r")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Enemy" unique_id=1536931877]
+sprite_frames = SubResource("SpriteFrames_j82ee")
+autoplay = "default"
+frame_progress = 0.06009025
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=319073983]
+position = Vector2(-3.5, -1)
 shape = SubResource("RectangleShape2D_md0e3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1544141590]

@@ -3,11 +3,14 @@ extends PathFollow2D
 @export var speed: float = 0.2
 @export var hitpoints: int = 5
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var sprite_2d: AnimatedSprite2D = $Enemy/Sprite2D
 var slows: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_to_group("EnemyPaths")
+	sprite_2d.play("default")
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
