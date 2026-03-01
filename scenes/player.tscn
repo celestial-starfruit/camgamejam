@@ -111,7 +111,6 @@ libraries/ = SubResource("AnimationLibrary_dqkch")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1569445466]
 enabled = false
-zoom = Vector2(2, 2)
 limit_left = 192
 limit_top = 0
 limit_right = 960

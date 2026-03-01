@@ -34,7 +34,8 @@ func _process(delta: float) -> void:
 		hp.get_child(0).text = "HP: " + str(Globals.player.hitpoints)
 		lives.visible = false
 		enemies_left.visible = false
-		tower_menu.visible = false
+		if !Globals.game.counting_down:
+			tower_menu.visible = false
 		time_left.visible = true
 		play_button.visible = false
 		#tower_menu.visible = false
