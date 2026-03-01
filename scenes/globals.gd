@@ -42,6 +42,7 @@ func reset_variables():
 	player_time_left = 0
 	current_game_state = GameStates.BUILD
 	round = 1
+	bases_arr = []
 	
 
 
