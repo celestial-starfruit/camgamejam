@@ -15,14 +15,7 @@ var tower_dict := {
 }
 var enemy_count: int
 enum GameStates {BUILD, DEFEND, ESCAPE}
-var current_game_state: int = GameStates.BUILD:
-	set(value):
-		if value == GameStates.BUILD:
-			AudioPlayer.stream = AudioPlayer.BUILDING
-		else:
-			AudioPlayer.stream = AudioPlayer.TDPHASE
-		AudioPlayer.play()
-		current_game_state = value
+var current_game_state: int
 var round: int = 1
 var tower_counts := {
 	Towers.PEASHOOTER: 0,
@@ -51,15 +44,7 @@ func reset_variables():
 	round = 1
 	
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
 func is_out_of_towers():
 	var count = 0
 	for i in tower_counts:

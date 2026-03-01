@@ -1,7 +1,8 @@
+AudioStreamPlayer
+AnimatedSprite2D
 CollisionShape2D
 StaticBody2D
 Node2D
-AudioStreamPlayer
 ColorRect
 Label
 CanvasLayer
@@ -11,5 +12,3 @@ PathFollow2D
 Sprite2D
 Path2D
 Button
-VBoxContainer
-Timer

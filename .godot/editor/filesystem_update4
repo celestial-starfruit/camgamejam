@@ -13,3 +13,6 @@ res://scenes/projectile.tscn
 res://default_bus_layout.tres
 res://scenes/game.tscn
 res://scenes/audio_player.gd
+res://scenes/towers/tower.tscn
+res://scenes/Music.tscn
+res://scenes/music.gd

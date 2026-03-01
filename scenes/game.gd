@@ -16,10 +16,14 @@ var all_enemies_deployed = false
 
 const ENEMY_PATH = preload("uid://cohiqpndtgam")
 const GRID_SQUARE = preload("uid://caugwk6shoruv")
+const BUILDING_MUSIC = preload("uid://dk048nwgtwraa")
+const TDPHASE = preload("uid://bcate8ilyh1qx")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.game = self
+	Globals.current_game_state = Globals.GameStates.BUILD
+	Music.play_music(BUILDING_MUSIC)
 	ui.connect("play_pressed", play_tower_defence)
 	
 	player.visible = false
@@ -42,6 +46,7 @@ func _ready() -> void:
 		grid_square.global_position = to_global(placeables.map_to_local(cell_coords))
 	
 	Globals.current_game_state = Globals.GameStates.BUILD
+	Music.play_music(BUILDING_MUSIC)
 	paths.get_child(Globals.current_base.base_num).get_node("EnemyPath/PreviewPath").show_preview()
 	Globals.tower_counts[Globals.Towers.PEASHOOTER] = 2
 	Globals.tower_counts[Globals.Towers.FIRE] = 1
@@ -65,6 +70,7 @@ func _process(delta: float) -> void:
 		Globals.GameStates.DEFEND:
 			if all_enemies_deployed and get_tree().get_nodes_in_group("EnemyPaths").is_empty():
 				Globals.current_game_state = Globals.GameStates.ESCAPE
+				Music.play_music(TDPHASE)
 				start_countdown.get_node("AnimationPlayer").play("countdown")
 				await start_countdown.get_node("AnimationPlayer").animation_finished
 				player.global_position = Globals.current_base.global_position
@@ -97,6 +103,7 @@ func enemy_wave() -> void:
 		
 func play_tower_defence() -> void:
 	Globals.current_game_state = Globals.GameStates.DEFEND
+	Music.play_music(TDPHASE)
 	Globals.enemy_count = 5
 	enemy_wave()
 	
@@ -115,4 +122,5 @@ func on_player_reached_base() -> void:
 	Globals.target_base = Globals.bases_arr[(Globals.target_base.base_num + 1) % 4]
 	Globals.round += 1
 	Globals.current_game_state = Globals.GameStates.BUILD
+	Music.play_music(BUILDING_MUSIC)
 	paths.get_child(Globals.current_base.base_num).get_node("EnemyPath/PreviewPath").show_preview()
