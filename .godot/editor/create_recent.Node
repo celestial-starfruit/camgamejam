@@ -1,4 +1,6 @@
 Label
+ColorRect
+CanvasLayer
 VBoxContainer
 AnimatedSprite2D
 Camera2D
@@ -7,8 +9,6 @@ Node
 CollisionShape2D
 StaticBody2D
 Node2D
-ColorRect
-CanvasLayer
 AnimationPlayer
 PathFollow2D
 Sprite2D

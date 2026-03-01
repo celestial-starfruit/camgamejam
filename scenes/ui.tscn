@@ -55,16 +55,22 @@ layout_mode = 2
 
 [node name="Build" type="Label" parent="TowerMenu/TowerContainer/Phases" unique_id=1083786313]
 layout_mode = 2
+tooltip_text = "Build towers to defend against those pesky cats"
+mouse_filter = 1
 text = "BUILD"
 horizontal_alignment = 1
 
 [node name="Defend" type="Label" parent="TowerMenu/TowerContainer/Phases" unique_id=960723335]
 layout_mode = 2
+tooltip_text = "Hope your defences hold up!"
+mouse_filter = 1
 text = "DEFEND"
 horizontal_alignment = 1
 
 [node name="Escape" type="Label" parent="TowerMenu/TowerContainer/Phases" unique_id=1254854422]
 layout_mode = 2
+tooltip_text = "Now can you sneak past your own defences..."
+mouse_filter = 1
 text = "ESCAPE"
 horizontal_alignment = 1
 

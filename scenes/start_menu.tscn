@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bwe2q8ow2u755"]
+
+[ext_resource type="Script" uid="uid://basbgfkxwx70p" path="res://scenes/start_menu.gd" id="1_m7x51"]
+[ext_resource type="Theme" uid="uid://g2ie0pm5b325" path="res://assets/theme.tres" id="1_ufv5y"]
+[ext_resource type="Texture2D" uid="uid://cimq3x6fl47dc" path="res://assets/title_screen.png" id="2_0d5ky"]
+
+[node name="TitleScreen" type="CanvasLayer" unique_id=606178818]
+script = ExtResource("1_m7x51")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1680990887]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_ufv5y")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=854181607]
+layout_mode = 2
+texture = ExtResource("2_0d5ky")
+
+[node name="StartGame" type="Button" parent="MarginContainer/TextureRect" unique_id=190548555]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -142.0
+offset_right = 100.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Start Game"
+
+[node name="Credits" type="Button" parent="MarginContainer/TextureRect" unique_id=1878269211]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -76.0
+offset_right = 100.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Credits"
+
+[connection signal="pressed" from="MarginContainer/TextureRect/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="MarginContainer/TextureRect/Credits" to="." method="_on_credits_pressed"]
