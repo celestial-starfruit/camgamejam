@@ -33,6 +33,7 @@ var tower_sprites := {
 	Towers.FIRE: preload("uid://cp4jbe565fhxr"),
 	Towers.FREEZE: preload("uid://bopwdcrywv7c8")
 }
+var game: Node2D
 
 func reset_variables():
 	current_base = null
@@ -58,3 +59,7 @@ func is_out_of_towers():
 		if tower_counts[i] != 0:
 			count += 1
 	return count == 0
+
+func game_over() -> void:
+	player_time_left = 0
+	game.ui.show_restart_menu()

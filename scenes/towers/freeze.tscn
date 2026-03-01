@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://8bdc0xc7bxau" path="res://scenes/towers/tower.tscn" id="1_jid3l"]
 [ext_resource type="Texture2D" uid="uid://ji4nhpwb8eus" path="res://assets/turrets/turrets.png" id="2_7xw12"]
 [ext_resource type="Texture2D" uid="uid://dwep33fdpd4sp" path="res://assets/turrets/snow.png" id="3_7xw12"]
-[ext_resource type="Script" uid="uid://bsjs5lb374x0g" path="res://scenes/towers/freeze.gd" id="3_o8ns6"]
+[ext_resource type="Script" path="res://scenes/towers/freeze.gd" id="3_o8ns6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o8ns6"]
 atlas = ExtResource("2_7xw12")
@@ -35,7 +35,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o8ns6"]
-radius = 48.0
+radius = 48.04165
 
 [node name="Freeze" unique_id=514986937 groups=["Freeze"] instance=ExtResource("1_jid3l")]
 script = ExtResource("3_o8ns6")
@@ -43,16 +43,16 @@ script = ExtResource("3_o8ns6")
 [node name="Sprite2D" parent="." index="0" unique_id=954598434]
 sprite_frames = SubResource("SpriteFrames_24nd6")
 
+[node name="CollisionShape2D" parent="." index="1" unique_id=717288644]
+shape = SubResource("CircleShape2D_o8ns6")
+
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." index="3" unique_id=1021949317]
 amount = 32
 texture = ExtResource("3_7xw12")
 lifetime = 5.0
 emission_shape = 1
-emission_sphere_radius = 64.0
+emission_sphere_radius = 44.92
 direction = Vector2(0, 1)
 gravity = Vector2(0, 0)
 initial_velocity_min = 2.0
 initial_velocity_max = 2.0
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="4" unique_id=1878048181]
-shape = SubResource("CircleShape2D_o8ns6")

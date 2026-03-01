@@ -6,3 +6,8 @@ var direction: Vector2
 
 func _process(delta: float) -> void:
 	global_position += speed * delta * direction
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body is Player:
+		body.hurt()

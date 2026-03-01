@@ -34,20 +34,24 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8x7gc"]
+radius = 48.0
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_m2lly"]
 particles_animation = true
 particles_anim_h_frames = 5
 particles_anim_v_frames = 1
 particles_anim_loop = true
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8x7gc"]
-radius = 48.0
-
 [node name="Fire" unique_id=514986937 instance=ExtResource("1_m2lly")]
+collision_mask = 6
 script = ExtResource("2_8x7gc")
 
 [node name="Sprite2D" parent="." index="0" unique_id=954598434]
 sprite_frames = SubResource("SpriteFrames_5s0n0")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=717288644]
+shape = SubResource("CircleShape2D_8x7gc")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." index="3" unique_id=997943605]
 material = SubResource("CanvasItemMaterial_m2lly")
@@ -65,6 +69,4 @@ initial_velocity_max = 48.0
 anim_speed_min = 1.0
 anim_speed_max = 1.0
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="4" unique_id=763217942]
-shape = SubResource("CircleShape2D_8x7gc")
-disabled = true
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

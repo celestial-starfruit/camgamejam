@@ -27,6 +27,7 @@ func _on_enemy_area_entered(area: Area2D) -> void:
 		area.queue_free()
 	elif area is Fire:
 		hitpoints -= 1
+		animation_player.play("hurt")
 	elif area is Freeze:
 		slows += 1
 	elif area.is_in_group("Bases"):
@@ -37,4 +38,3 @@ func _on_enemy_area_entered(area: Area2D) -> void:
 func _on_enemy_area_exited(area: Area2D) -> void:
 	if area is Freeze:
 		slows -= 1
-	pass

@@ -19,6 +19,7 @@ const GRID_SQUARE = preload("uid://caugwk6shoruv")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Globals.game = self
 	ui.connect("play_pressed", play_tower_defence)
 	
 	player.visible = false
@@ -72,7 +73,7 @@ func _process(delta: float) -> void:
 				player_time_limit.stop()
 				player_time_limit.start()
 			if Globals.lives == 0:
-				_on_player_time_limit_timeout()
+				Globals.game_over()
 		Globals.GameStates.ESCAPE:
 			Globals.player_time_left = player_time_limit.time_left
 			
@@ -102,8 +103,7 @@ func play_tower_defence() -> void:
 	
 
 func _on_player_time_limit_timeout() -> void:
-	Globals.player_time_left = 0
-	ui.show_restart_menu()
+	Globals.game_over()
 	
 func on_player_reached_base() -> void:
 	Globals.tower_counts[Globals.Towers.PEASHOOTER] = 2
