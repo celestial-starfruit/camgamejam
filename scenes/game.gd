@@ -117,7 +117,7 @@ func enemy_wave() -> void:
 func play_tower_defence() -> void:
 	Globals.current_game_state = Globals.GameStates.DEFEND
 	Music.play_music(TDPHASE)
-	Globals.enemy_count = 5
+	Globals.enemy_count += 3
 	enemy_wave()
 	
 	

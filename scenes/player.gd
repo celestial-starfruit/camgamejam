@@ -19,8 +19,7 @@ func _physics_process(delta: float) -> void:
 		if direction:
 			velocity = direction * speed * (0.5 ** float(slows))
 			sprite_2d.play("default")
-			if direction.x >= 0:
-				sprite_2d.flip_h = true
+			sprite_2d.flip_h = direction.x >= 0
 		else:
 			velocity = Vector2.ZERO
 			sprite_2d.stop()
@@ -33,6 +32,7 @@ func hurt(damage: int = 1) -> void:
 		if hitpoints >= damage:
 			hitpoints -= damage
 		else:
-			Globals.game.ui.hp.get_child(0).text = "HP: 0"
-			Globals.game_over()
+			if !Globals.counting_down:
+				Globals.game.ui.hp.get_child(0).text = "HP: 0"
+				Globals.game_over()
 	
