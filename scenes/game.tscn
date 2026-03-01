@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bpc6vxc8mhwc2" path="res://assets/bases/south.png" id="6_kvpfn"]
 [ext_resource type="AudioStream" uid="uid://xg1encm7akhd" path="res://assets/sfx/fire.ogg" id="7_ca42v"]
 [ext_resource type="Texture2D" uid="uid://dqwgqk63mmao" path="res://assets/bases/east.png" id="7_dinhu"]
+[ext_resource type="AudioStream" uid="uid://d0qcw55fdxuxa" path="res://assets/sfx/death.ogg" id="8_ir15t"]
 [ext_resource type="Texture2D" uid="uid://drwx5imqnl8d1" path="res://assets/bases/north.png" id="8_kvuet"]
 [ext_resource type="PackedScene" uid="uid://cbcpsapraub0e" path="res://scenes/preview_path.tscn" id="9_vtaks"]
 
@@ -227,6 +228,10 @@ bus = &"SFX"
 [node name="FireStream" type="AudioStreamPlayer" parent="AudioStreams" unique_id=124984696]
 stream = ExtResource("7_ca42v")
 bus = &"SFX"
+
+[node name="DeathStream" type="AudioStreamPlayer" parent="AudioStreams" unique_id=1424711733]
+stream = ExtResource("8_ir15t")
+max_polyphony = 5
 
 [node name="Boundaries" type="Node2D" parent="." unique_id=619400930]
 

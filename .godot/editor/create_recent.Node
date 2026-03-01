@@ -1,5 +1,5 @@
-Node
 AudioStreamPlayer
+Node
 AnimatedSprite2D
 CollisionShape2D
 StaticBody2D
@@ -12,4 +12,3 @@ Camera2D
 PathFollow2D
 Sprite2D
 Path2D
-Button

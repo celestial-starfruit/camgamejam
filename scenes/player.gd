@@ -21,11 +21,12 @@ func _physics_process(delta: float) -> void:
 
 		move_and_slide()
 
-func hurt() -> void:
+func hurt(damage: int = 1) -> void:
 	if !animation_player.is_playing():
 		animation_player.play("hurt")
-		if hitpoints != 1:
-			hitpoints -= 1
+		if hitpoints >= damage:
+			hitpoints -= damage
 		else:
+			Globals.game.ui.hp.get_child(0).text = "HP: 0"
 			Globals.game_over()
 	

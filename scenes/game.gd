@@ -14,6 +14,7 @@ extends Node2D
 @onready var peashooter_stream: AudioStreamPlayer = $AudioStreams/PeashooterStream
 @onready var freeze_stream: AudioStreamPlayer = $AudioStreams/FreezeStream
 @onready var fire_stream: AudioStreamPlayer = $AudioStreams/FireStream
+@onready var death_stream: AudioStreamPlayer = $AudioStreams/DeathStream
 
 var all_enemies_deployed = false
 var counting_down = false

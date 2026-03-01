@@ -14,6 +14,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	progress_ratio += delta * speed * (0.5 ** float(slows))
 	if hitpoints <= 0:
+		if !Globals.game.death_stream.playing:
+			Globals.game.death_stream.play()
 		queue_free()
 	if progress_ratio == 1:
 		Globals.lives -= 1

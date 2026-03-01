@@ -14,4 +14,4 @@ func attack() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		body.hurt()
+		body.hurt(2)
