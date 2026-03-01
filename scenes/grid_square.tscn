@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://caugwk6shoruv"]
 
 [ext_resource type="Script" uid="uid://dke3hjjs8i3wv" path="res://scenes/grid_square.gd" id="1_mb54p"]
+[ext_resource type="AudioStream" uid="uid://ckf0hmybvhf3w" path="res://assets/sfx/place.ogg" id="2_a7mnf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_25ab8"]
 size = Vector2(32, 32)
@@ -22,6 +23,10 @@ modulate = Color(1, 1, 1, 0.4745098)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2000224963]
 shape = SubResource("RectangleShape2D_25ab8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=300767665]
+stream = ExtResource("2_a7mnf")
+max_polyphony = 5
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -3,6 +3,8 @@ extends Area2D
 var filled := false
 var mouse_inside := false
 @onready var preview_sprite: Sprite2D = $PreviewSprite
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = false
@@ -16,6 +18,7 @@ func _process(delta: float) -> void:
 		if Input.is_action_pressed("Click") and mouse_inside:
 			visible = false
 			filled = true
+			audio_stream_player.play()
 			var tower: Tower = Globals.tower_dict[Globals.tower_selected].instantiate()
 			tower.global_position = global_position
 			Globals.tower_counts[Globals.tower_selected] -= 1
