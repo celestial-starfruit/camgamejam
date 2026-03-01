@@ -10,6 +10,7 @@ extends CanvasLayer
 @onready var tower_menu: ColorRect = $TowerMenu
 @onready var failure_screen: ColorRect = $FailureScreen
 @onready var hp: HBoxContainer = $TopBar/HBoxContainer/HP
+@onready var tooltip: Label = $Tooltip
 
 signal play_pressed
 
@@ -36,6 +37,7 @@ func _process(delta: float) -> void:
 		enemies_left.visible = false
 		if !Globals.game.counting_down:
 			tower_menu.visible = false
+			tooltip.visible = true
 		time_left.visible = true
 		play_button.visible = false
 		#tower_menu.visible = false
@@ -44,6 +46,7 @@ func _process(delta: float) -> void:
 		hp.visible = false
 		lives.visible = true
 		tower_menu.visible = true
+		tooltip.visible = false
 		lives.get_child(0).text = "Lives: " + str(Globals.lives)
 		enemies_left.get_child(0).text = "Enemies approaching: " + str(Globals.enemy_count)
 		enemies_left.visible = true

@@ -240,6 +240,16 @@ text = "Restart"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=26530748]
 
+[node name="Tooltip" type="Label" parent="." unique_id=643850646]
+visible = false
+offset_left = 644.0
+offset_top = 58.0
+offset_right = 956.0
+offset_bottom = 81.0
+theme = ExtResource("2_wm3ai")
+text = "Use the arrow keys to move"
+horizontal_alignment = 1
+
 [connection signal="toggled" from="TowerMenu/TowerContainer/Peashooter" to="." method="_on_tower_toggled" binds= [0]]
 [connection signal="toggled" from="TowerMenu/TowerContainer/Fire" to="." method="_on_tower_toggled" binds= [1]]
 [connection signal="toggled" from="TowerMenu/TowerContainer/Freeze" to="." method="_on_tower_toggled" binds= [2]]
