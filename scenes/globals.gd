@@ -13,7 +13,7 @@ var tower_dict := {
 	Towers.FIRE: preload("uid://c62qx21jbee7w"),
 	Towers.FREEZE: preload("uid://bnnner1yfnlow")
 }
-var enemy_count: int = 2
+var enemy_count: int = 5
 enum GameStates {BUILD, DEFEND, ESCAPE}
 var current_game_state: int
 var round: int = 1

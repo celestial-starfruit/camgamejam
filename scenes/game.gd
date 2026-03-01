@@ -117,7 +117,6 @@ func enemy_wave() -> void:
 func play_tower_defence() -> void:
 	Globals.current_game_state = Globals.GameStates.DEFEND
 	Music.play_music(TDPHASE)
-	Globals.enemy_count += 3
 	enemy_wave()
 	
 	
@@ -135,6 +134,7 @@ func on_player_reached_base() -> void:
 	Globals.target_base = Globals.bases_arr[(Globals.target_base.base_num + 1) % 4]
 	Globals.round += 1
 	Globals.current_game_state = Globals.GameStates.BUILD
+	Globals.enemy_count += 3
 	player.slows = 0
 	player.camera_2d.enabled = false
 	player.hitpoints = 3
