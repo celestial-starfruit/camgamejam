@@ -11,6 +11,9 @@ extends CanvasLayer
 @onready var failure_screen: ColorRect = $FailureScreen
 @onready var hp: HBoxContainer = $TopBar/HBoxContainer/HP
 @onready var tooltip: Label = $Tooltip
+@onready var phases: VBoxContainer = $TowerMenu/TowerContainer/Phases
+
+const FOCUS_BOX = preload("uid://cqqlwcasii6hu")
 
 signal play_pressed
 
@@ -31,6 +34,7 @@ func _process(delta: float) -> void:
 	play_button.disabled = !(Globals.is_out_of_towers() and Globals.current_game_state == Globals.GameStates.BUILD)
 	wave.get_child(0).text = "Wave: " + str(Globals.round)
 	if Globals.current_game_state == Globals.GameStates.ESCAPE:
+		update_styleboxes("Escape")
 		hp.visible = true
 		hp.get_child(0).text = "HP: " + str(Globals.player.hitpoints)
 		lives.visible = false
@@ -43,6 +47,10 @@ func _process(delta: float) -> void:
 		#tower_menu.visible = false
 		time_left.get_child(0).text = "Time left: %.2f" % Globals.player_time_left
 	else:
+		if Globals.current_game_state == Globals.GameStates.BUILD:
+			update_styleboxes("Build")
+		elif Globals.current_game_state == Globals.GameStates.DEFEND:
+			update_styleboxes("Defend")
 		hp.visible = false
 		lives.visible = true
 		tower_menu.visible = true
@@ -53,6 +61,7 @@ func _process(delta: float) -> void:
 		time_left.visible = false
 		play_button.visible = true
 		#tower_menu.visible = true
+	
 	
 
 func _on_play_button_pressed() -> void:
@@ -67,3 +76,12 @@ func _on_button_pressed() -> void:
 func show_restart_menu():
 	failure_screen.visible = true
 	get_tree().paused = true
+
+func update_styleboxes(label_txt: String):
+		for label: Label in phases.get_children():
+			if label.name == label_txt:
+				label.add_theme_stylebox_override("normal", FOCUS_BOX)
+			else:
+				label.remove_theme_stylebox_override("normal")
+				
+				

@@ -46,6 +46,28 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 2
 
+[node name="PhaseLabel" type="Label" parent="TowerMenu/TowerContainer" unique_id=622339749]
+layout_mode = 2
+text = "Phase"
+
+[node name="Phases" type="VBoxContainer" parent="TowerMenu/TowerContainer" unique_id=1039747971]
+layout_mode = 2
+
+[node name="Build" type="Label" parent="TowerMenu/TowerContainer/Phases" unique_id=1083786313]
+layout_mode = 2
+text = "BUILD"
+horizontal_alignment = 1
+
+[node name="Defend" type="Label" parent="TowerMenu/TowerContainer/Phases" unique_id=960723335]
+layout_mode = 2
+text = "DEFEND"
+horizontal_alignment = 1
+
+[node name="Escape" type="Label" parent="TowerMenu/TowerContainer/Phases" unique_id=1254854422]
+layout_mode = 2
+text = "ESCAPE"
+horizontal_alignment = 1
+
 [node name="Peashooter" type="Button" parent="TowerMenu/TowerContainer" unique_id=63836738]
 layout_mode = 2
 size_flags_horizontal = 3
