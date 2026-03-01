@@ -227,6 +227,7 @@ text = "Play"
 metadata/_edit_use_anchors_ = true
 
 [node name="FailureScreen" type="ColorRect" parent="." unique_id=128905750]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -260,6 +261,7 @@ focus_mode = 0
 text = "Restart"
 
 [node name="Quit" type="Button" parent="FailureScreen/VBoxContainer" unique_id=2065714207]
+visible = false
 layout_mode = 2
 focus_mode = 0
 text = "Quit to Menu"
