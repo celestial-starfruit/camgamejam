@@ -61,7 +61,7 @@ expand_icon = true
 
 [node name="PeashooterAvailable" type="Label" parent="TowerMenu/TowerContainer" unique_id=1163651265]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 24
 text = "1"
@@ -82,7 +82,7 @@ expand_icon = true
 
 [node name="FireAvailable" type="Label" parent="TowerMenu/TowerContainer" unique_id=1565842469]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 24
 text = "2"
@@ -103,7 +103,7 @@ expand_icon = true
 
 [node name="FreezeAvailable" type="Label" parent="TowerMenu/TowerContainer" unique_id=371767311]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 24
 text = "3"
