@@ -6,8 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://b6my6p23cr3bw" path="res://assets/tilesets/day_path.png" id="3_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://b76xuqlismrr5" path="res://scenes/base.tscn" id="4_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player.tscn" id="4_lbhrr"]
+[ext_resource type="AudioStream" uid="uid://dwvi36vckgdjj" path="res://assets/sfx/hit.ogg" id="5_trtic"]
 [ext_resource type="Texture2D" uid="uid://c0pfossxya4lg" path="res://assets/bases/west.png" id="5_vtaks"]
+[ext_resource type="AudioStream" uid="uid://qq5hubmeq2ty" path="res://assets/sfx/freeze.ogg" id="6_ir15t"]
 [ext_resource type="Texture2D" uid="uid://bpc6vxc8mhwc2" path="res://assets/bases/south.png" id="6_kvpfn"]
+[ext_resource type="AudioStream" uid="uid://xg1encm7akhd" path="res://assets/sfx/fire.ogg" id="7_ca42v"]
 [ext_resource type="Texture2D" uid="uid://dqwgqk63mmao" path="res://assets/bases/east.png" id="7_dinhu"]
 [ext_resource type="Texture2D" uid="uid://drwx5imqnl8d1" path="res://assets/bases/north.png" id="8_kvuet"]
 [ext_resource type="PackedScene" uid="uid://cbcpsapraub0e" path="res://scenes/preview_path.tscn" id="9_vtaks"]
@@ -210,6 +213,17 @@ tile_map_data = PackedByteArray("AAAKAA0AAAACAAAAAAALAA0AAAACAAAAAAAMAA0AAAACAAA
 tile_set = SubResource("TileSet_vtaks")
 
 [node name="Grid" type="Node2D" parent="." unique_id=830970078]
+
+[node name="AudioStreams" type="Node" parent="." unique_id=328236225]
+
+[node name="PeashooterStream" type="AudioStreamPlayer" parent="AudioStreams" unique_id=466652459]
+stream = ExtResource("5_trtic")
+
+[node name="FreezeStream" type="AudioStreamPlayer" parent="AudioStreams" unique_id=1569961710]
+stream = ExtResource("6_ir15t")
+
+[node name="FireStream" type="AudioStreamPlayer" parent="AudioStreams" unique_id=124984696]
+stream = ExtResource("7_ca42v")
 
 [node name="Boundaries" type="Node2D" parent="." unique_id=619400930]
 

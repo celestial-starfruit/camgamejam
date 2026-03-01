@@ -11,9 +11,13 @@ extends Node2D
 @onready var bases: Node2D = $Bases
 @onready var player_time_limit: Timer = $Timers/PlayerTimeLimit
 @onready var start_countdown: CanvasLayer = $StartCountdown
+@onready var peashooter_stream: AudioStreamPlayer = $AudioStreams/PeashooterStream
+@onready var freeze_stream: AudioStreamPlayer = $AudioStreams/FreezeStream
+@onready var fire_stream: AudioStreamPlayer = $AudioStreams/FireStream
 
 var all_enemies_deployed = false
 var counting_down = false
+var alternate = true
 
 const ENEMY_PATH = preload("uid://cohiqpndtgam")
 const GRID_SQUARE = preload("uid://caugwk6shoruv")
@@ -89,9 +93,13 @@ func _process(delta: float) -> void:
 		
 
 func _on_attack_cooldown_timeout() -> void:
+	alternate = !alternate
 	for tower: Tower in towers_manager.get_children():
 		if tower.active_shooting and not counting_down:
 			tower.attack()
+			if alternate:
+				fire_stream.play()
+			peashooter_stream.play()
 
 
 func enemy_wave() -> void:
