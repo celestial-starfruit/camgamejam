@@ -3,6 +3,27 @@
 [ext_resource type="Theme" uid="uid://g2ie0pm5b325" path="res://assets/theme.tres" id="1_0bpdh"]
 [ext_resource type="Script" uid="uid://h4fy2dm4ekfa" path="res://scenes/credits.gd" id="1_2ckv8"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ckv8"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.16078432, 0, 0.08627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ctdu"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.16078432, 0, 0.08627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fbfq"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.16078432, 0, 0.08627451, 1)
+
 [node name="Credits" type="CanvasLayer" unique_id=1569372998]
 script = ExtResource("1_2ckv8")
 
@@ -31,6 +52,9 @@ offset_right = 100.0
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2ckv8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0ctdu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_2fbfq")
 text = "Main Menu"
 
 [node name="Label" type="Label" parent="MarginContainer/TextureRect" unique_id=2003254992]

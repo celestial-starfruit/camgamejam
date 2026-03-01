@@ -4,6 +4,13 @@
 [ext_resource type="Theme" uid="uid://g2ie0pm5b325" path="res://assets/theme.tres" id="1_ufv5y"]
 [ext_resource type="Texture2D" uid="uid://cimq3x6fl47dc" path="res://assets/title_screen.png" id="2_0d5ky"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7x51"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.16078432, 0, 0.08627451, 1)
+
 [node name="TitleScreen" type="CanvasLayer" unique_id=606178818]
 script = ExtResource("1_m7x51")
 
@@ -29,6 +36,9 @@ offset_right = 100.0
 offset_bottom = -96.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m7x51")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m7x51")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_m7x51")
 text = "Start Game"
 
 [node name="Credits" type="Button" parent="MarginContainer/TextureRect" unique_id=1878269211]
@@ -44,6 +54,9 @@ offset_right = 100.0
 offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m7x51")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m7x51")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_m7x51")
 text = "Credits"
 
 [connection signal="pressed" from="MarginContainer/TextureRect/StartGame" to="." method="_on_start_game_pressed"]
