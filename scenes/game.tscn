@@ -231,14 +231,18 @@ bus = &"SFX"
 [node name="Boundaries" type="Node2D" parent="." unique_id=619400930]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Boundaries" unique_id=114439913]
-position = Vector2(560, 55)
+position = Vector2(560, 63)
 rotation = 3.1415927
+collision_layer = 8
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D" unique_id=1262078211]
 shape = SubResource("WorldBoundaryShape2D_kvpfn")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Boundaries" unique_id=1404279328]
 position = Vector2(562, 545)
+collision_layer = 8
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D2" unique_id=857558850]
 shape = SubResource("WorldBoundaryShape2D_kvpfn")
@@ -246,6 +250,8 @@ shape = SubResource("WorldBoundaryShape2D_kvpfn")
 [node name="StaticBody2D3" type="StaticBody2D" parent="Boundaries" unique_id=947419023]
 position = Vector2(960, 301)
 rotation = -1.5707964
+collision_layer = 8
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D3" unique_id=1555414354]
 shape = SubResource("WorldBoundaryShape2D_kvpfn")
@@ -253,6 +259,8 @@ shape = SubResource("WorldBoundaryShape2D_kvpfn")
 [node name="StaticBody2D4" type="StaticBody2D" parent="Boundaries" unique_id=222027061]
 position = Vector2(193, 238)
 rotation = 1.5707964
+collision_layer = 8
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D4" unique_id=464594447]
 shape = SubResource("WorldBoundaryShape2D_kvpfn")
