@@ -9,4 +9,5 @@ loop = false
 script = ExtResource("1_s7tih")
 
 [node name="PreviewIcon" type="Sprite2D" parent="." unique_id=2043022084]
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_s7tih")
