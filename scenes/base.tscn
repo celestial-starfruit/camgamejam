@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b76xuqlismrr5"]
 
 [ext_resource type="Script" uid="uid://kgkt20ftpmpt" path="res://scenes/base.gd" id="1_baglu"]
+[ext_resource type="AudioStream" uid="uid://c5ayqomprvru8" path="res://assets/music/win.wav" id="2_baglu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvqg0"]
 size = Vector2(23, 30)
@@ -15,5 +16,9 @@ collision_mask = 6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area" unique_id=733899946]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_pvqg0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=756399920]
+stream = ExtResource("2_baglu")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
